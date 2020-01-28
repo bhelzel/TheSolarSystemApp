@@ -1,0 +1,12 @@
+#mars-display {
+    display: flex;
+    overflow-y: hidden;
+    overflow: scroll;
+    height: 500px;
+    background-color: black;
+}
+
+#mars-display > img {
+    padding: 10px;
+}
+
