@@ -1902,7 +1902,7 @@ class MarsImageSlidebar {
         axios.get(`/roverphotos`)
             .then(res => {
                 res.data.photos.forEach(photo => {
-                    links = links.concat(`<img src=${photo.img_src} />`);
+                    links = links.concat(`<img class="rover-image" src=${photo.img_src} />`);
                 });
                 this.container.innerHTML = links;
             })

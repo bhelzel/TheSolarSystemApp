@@ -2,11 +2,16 @@
     display: flex;
     overflow-y: hidden;
     overflow: scroll;
-    height: 500px;
+    height: 520px;
     background-color: black;
 }
 
 #mars-display > img {
     padding: 10px;
+}
+
+.rover-image {
+    height: 500px;;
+    width: 100%;
 }
 
