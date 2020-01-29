@@ -951,6 +951,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__image_slidebar__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__martian_weather__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mission_manifest__ = __webpack_require__(31);
+
 
 
 
@@ -958,14 +960,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 document.addEventListener('DOMContentLoaded', () => {
     // let infoDisplay = document.getElementById('info-display');
-    let marsDisplay = document.getElementById('mars-display');
-    // let martianWeather = document.getElementById('martian-weather');
-    // const curiosity = 'curiosity';
-    // new ImageSlidebar(infoDisplay).render();
-    new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay).render();
+    const marsDisplay = document.getElementById('mars-display');
+    // const missionManifest = document.getElementById('mission-manifest');
+    const curiosityButton = document.getElementById('curiosity-button');
+    curiosityButton.addEventListener('click', (e) => {
+        console.log(e);
+        const curiosity = "curiosity";
+        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay, curiosity).render();
+    });
+
+    const opportunityButton = document.getElementById('opportunity-button');
+    opportunityButton.addEventListener('click', (e) => {
+        console.log(e);
+        const opportunity = "opportunity";
+        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay, opportunity).render();
+    });
+
+    const spiritButton = document.getElementById('spirit-button');
+    spiritButton.addEventListener('click', (e) => {
+        console.log(e);
+        const spirit = "spirit";
+        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay, spirit).render();
+    });
+    // new MarsImageSlidebar(marsDisplay, "opportunity").render();
+    // new MissionManifest(missionManifest, "curiosity").render();
     // new MartianWeather(martianWeather).render();
 });
-
 
 /***/ }),
 /* 10 */
@@ -1890,16 +1910,17 @@ module.exports = function spread(callback) {
 const axios = __webpack_require__(1);
 
 class MarsImageSlidebar {
-    constructor(container) {
+
+    constructor(container, rover="curiosity") {
         this.container = container;
         this.container.innerHTML = '';
-        // this.rover = rover;
+        this.rover = rover;
     }
 
     render() {
         let links = '';
         // console.log(this.rover);
-        axios.get(`/roverphotos`)
+        axios.get(`/roverphotos/${this.rover}`)
             .then(res => {
                 res.data.photos.forEach(photo => {
                     links = links.concat(`<img class="rover-image" src=${photo.img_src} />`);
@@ -1929,6 +1950,30 @@ class MartianWeather {
 
     render() {
         axios.get('/martianweather')
+            .then(res => {
+                console.log(res);
+            });
+    }
+}
+/* unused harmony export default */
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const axios = __webpack_require__(1);
+
+class MissionManifest {
+    
+    constructor(container, rover) {
+        this.container = container;
+        this.rover = rover;
+    }
+
+    render() {
+        axios.get(`/missionmanifest`)
             .then(res => {
                 console.log(res);
             });

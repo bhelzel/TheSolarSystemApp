@@ -27,10 +27,10 @@ app.get('/photos', (req, response) => {
     });
 });
 
-app.get('/roverphotos', (request, response) => {
-
-  const url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs";
-    
+app.get('/roverphotos/:rover', (request, response) => {
+  if(request.params.rover === 'curiosity') {
+    const url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs";
+      
     fetch(url)
       .then(res => {
         return res.json();
@@ -42,6 +42,54 @@ app.get('/roverphotos', (request, response) => {
       .catch(error => {
         console.log(error);
       });
+
+  } else if(request.params.rover === 'opportunity') {
+    const url = "https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos?sol=100&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs";
+
+    fetch(url)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        // console.log(data);
+        response.send(data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+  } else {
+    const url = "https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/latest_photos&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs";
+      
+    fetch(url)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        // console.log(data);
+        response.send(data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+});
+
+app.get('missionmanifest', (request, response) => {
+  const url = `https://api.nasa.gov/mars-photos/v1/manifests/curiosity`;
+  
+  fetch(url)
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      console.log(data);
+      response.send(data);
+    })
+    .catch(errors => {
+      console.log(errors);
+    });
+
 });
 
 app.get('./martianweather', (request, response) => {

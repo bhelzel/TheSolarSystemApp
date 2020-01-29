@@ -1,16 +1,17 @@
 const axios = require('axios');
 
 export default class MarsImageSlidebar {
-    constructor(container) {
+
+    constructor(container, rover="curiosity") {
         this.container = container;
         this.container.innerHTML = '';
-        // this.rover = rover;
+        this.rover = rover;
     }
 
     render() {
         let links = '';
         // console.log(this.rover);
-        axios.get(`/roverphotos`)
+        axios.get(`/roverphotos/${this.rover}`)
             .then(res => {
                 res.data.photos.forEach(photo => {
                     links = links.concat(`<img class="rover-image" src=${photo.img_src} />`);
