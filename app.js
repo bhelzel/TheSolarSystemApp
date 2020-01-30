@@ -36,7 +36,6 @@ app.get('/roverphotos/:rover', (request, response) => {
         return res.json();
       })
       .then(data => {
-        // console.log(data);
         response.send(data);
       })
       .catch(error => {
@@ -44,14 +43,13 @@ app.get('/roverphotos/:rover', (request, response) => {
       });
 
   } else if(request.params.rover === 'opportunity') {
-    const url = "https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos?sol=100&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs";
+    const url = "https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos?sol=80&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs";
 
     fetch(url)
       .then(res => {
         return res.json();
       })
       .then(data => {
-        // console.log(data);
         response.send(data);
       })
       .catch(error => {
@@ -59,14 +57,13 @@ app.get('/roverphotos/:rover', (request, response) => {
       });
 
   } else {
-    const url = "https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/latest_photos&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs";
+    const url = "https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos?sol=29&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs";
       
     fetch(url)
       .then(res => {
         return res.json();
       })
       .then(data => {
-        // console.log(data);
         response.send(data);
       })
       .catch(error => {
@@ -75,15 +72,14 @@ app.get('/roverphotos/:rover', (request, response) => {
   }
 });
 
-app.get('missionmanifest', (request, response) => {
-  const url = `https://api.nasa.gov/mars-photos/v1/manifests/curiosity`;
+app.get('/missionmanifest', (request, response) => {
+  const url = `https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs`;
   
   fetch(url)
     .then(res => {
       return res.json();
     })
     .then(data => {
-      console.log(data);
       response.send(data);
     })
     .catch(errors => {
@@ -92,20 +88,21 @@ app.get('missionmanifest', (request, response) => {
 
 });
 
-app.get('./martianweather', (request, response) => {
-  const url = "https://api.mars.spacexcompanion.app/v1/weather/latest";
+app.get('/martianweather', (request, response) => {
+  const url = "https://api.nasa.gov/insight_weather/?api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs&feedtype=json&ver=1.0";
   fetch(url)
     .then(res => {
       return res.json();
     })
     .then(data => {
-      console.log(data);
       response.send(data);
     })
     .catch(error => {
       console.log(error);
     });
 });
+
+
 
 // create a search route
 // app.get('/search', (request, response) => {

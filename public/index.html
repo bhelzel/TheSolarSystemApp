@@ -4,25 +4,43 @@
     <meta charset="utf-8">
     <title></title>
     <script type="text/javascript" src="./bundle.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <link rel="stylesheet" href="./stylesheets/mars_photos.css">
     <link rel="stylesheet" href="./stylesheets//buttons.css">
+    <link rel="stylesheet" href="./stylesheets/main.css">
   </head>
   <body>
     <main id='main'>
-      <nav class="nav">
-        <button class="rover-button" id="curiosity-button">Curiosity</button>
-        <button class="rover-button" id="opportunity-button">Opportunity</button>
-        <button class="rover-button" id="spirit-button">Spirit</button>
-      </nav>
-      <div id="mission-manifest">
-      
-      </div>
-      <div id="mars-display">
-      
-      </div>
-      <div id="martian-weather">
+      <div class="wrapper">
+        <div class="nav">
+          <div class="title-div">
+            <h2 class="title">Join us on the Red Planet</h2>
+            <h4 class="title">Select a rover to see it's photos!</h4>
+          </div>
+          <button class="rover-button" id="curiosity-button">Curiosity</button>
+          <button class="rover-button" id="opportunity-button">Opportunity</button>
+          <button class="rover-button" id="spirit-button">Spirit</button>
+        </div>
+        <div id="mars-display">
+        
+        </div>
+        <div class="weather-nav">
+          <h3>7 Day Forecast:</h3>
+        </div>
+        <div id="weather-chart" style="min-width: 100%; height: 400px; margin: 0 auto"></div>
+        <div class="windspeed-nav">
 
-      </div>
+        </div>
+        <div id="windspeed-chart" style="min-width: 100%; height: 400px; margin: 0 auto"></div>
+        <div class="pressure-nav">
+        
+        </div>
+        <div id="pressure-chart" style="min-width: 100%; height: 400px; margin: 0 auto"></div>
+      </div>  
+      
+  
     </main>
   </body>
 </html>

@@ -1,22 +1,21 @@
 const axios = require('axios');
 var Highcharts = require('highcharts');
-// import weatherchart from './weatherchart';
 
-export default class MartianWeather {
+export default class MartianWindspeed {
     render() {
-        
+
         let weatherData;
 
         axios.get('/martianweather')
             .then(res => {
                 weatherData = res.data;
                 console.log(weatherData);
-                Highcharts.chart('weather-chart', {
+                Highcharts.chart('windspeed-chart', {
                     chart: {
                         type: 'line'
                     },
                     title: {
-                        text: 'Weekly Temperature Forecast'
+                        text: 'Weekly Windspeed Forecast'
                     },
                     subtitle: {
                         text: 'Source: NASA Mars InSight Weather Report'
@@ -29,7 +28,7 @@ export default class MartianWeather {
                     },
                     yAxis: {
                         title: {
-                            text: 'Temperature (°F)'
+                            text: 'Windspeed (mph)'
                         }
                     },
                     plotOptions: {
@@ -41,24 +40,24 @@ export default class MartianWeather {
                         }
                     },
                     series: [{
-                        name: 'Average Air Temperature',
+                        name: 'Average Windspeed',
                         data: weatherData.sol_keys.map(key => {
                             console.log(key);
-                            return weatherData[key].AT.av;
+                            return Math.floor(weatherData[key].HWS.av);
                         })
                     }, {
-                        name: 'Low',
+                        name: 'Min',
                         data: weatherData.sol_keys.map(key => {
-                            return weatherData[key].AT.mn;
-                    })
+                            return Math.floor(weatherData[key].HWS.mn);
+                        })
                     }, {
-                        name: 'High',
+                        name: 'Max',
                         data: weatherData.sol_keys.map(key => {
-                            return weatherData[key].AT.mx;
+                            return Math.floor(weatherData[key].HWS.mx);
                         })
                     }]
                 });
-            });    
+            });
     }
 
 }

@@ -4,10 +4,13 @@
 }
 #mars-display {
     display: flex;
+    flex-direction: row;
     overflow-y: hidden;
     overflow: scroll;
-    height: 520px;
+    height: 560px;
+    width: 100%;
     background-color: black;
+    grid-area: rvp;
 }
 
 #mars-display > img {
@@ -15,7 +18,7 @@
 }
 
 .rover-image {
-    height: 500px;;
+    height: 540px;;
     width: 100%;
 }
 

@@ -4,19 +4,19 @@ var Highcharts = require('highcharts');
 
 export default class MartianWeather {
     render() {
-        
+
         let weatherData;
 
         axios.get('/martianweather')
             .then(res => {
                 weatherData = res.data;
                 console.log(weatherData);
-                Highcharts.chart('weather-chart', {
+                Highcharts.chart('pressure-chart', {
                     chart: {
                         type: 'line'
                     },
                     title: {
-                        text: 'Weekly Temperature Forecast'
+                        text: 'Weekly Air Pressure Forecast'
                     },
                     subtitle: {
                         text: 'Source: NASA Mars InSight Weather Report'
@@ -29,7 +29,7 @@ export default class MartianWeather {
                     },
                     yAxis: {
                         title: {
-                            text: 'Temperature (°F)'
+                            text: 'Pressure (Pa)'
                         }
                     },
                     plotOptions: {
@@ -44,21 +44,21 @@ export default class MartianWeather {
                         name: 'Average Air Temperature',
                         data: weatherData.sol_keys.map(key => {
                             console.log(key);
-                            return weatherData[key].AT.av;
+                            return weatherData[key].PRE.av;
                         })
                     }, {
                         name: 'Low',
                         data: weatherData.sol_keys.map(key => {
-                            return weatherData[key].AT.mn;
-                    })
+                            return weatherData[key].PRE.mn;
+                        })
                     }, {
                         name: 'High',
                         data: weatherData.sol_keys.map(key => {
-                            return weatherData[key].AT.mx;
+                            return weatherData[key].PRE.mx;
                         })
                     }]
                 });
-            });    
+            });
     }
 
 }

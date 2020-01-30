@@ -1,0 +1,10 @@
+.weather-nav {
+    grid-area: wtn;
+    color: white;
+}
+.weather-chart {
+    grid-area: wtc;
+}
+.weather-chart:first-child {
+    width: 100%;
+}

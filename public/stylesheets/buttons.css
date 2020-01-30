@@ -1,14 +1,40 @@
 .nav {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     background-color: black;
+    height: 560px;
+    grid-area: btn;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.title-div {
+    display: flex;
+    flex-direction: column;
+    background-image: url('./images/Webp.net-resizeimage.jpg');
+    background-repeat: no-repeat;
+    height: 300px;
+    background-position: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 .rover-button {
-    height: 30px;
-    width: 100px;
-    border-radius: 10px;
+    height: 50px;
+    width: 90%;
+    margin: 10px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
     background-color: rgb(0, 0, 44);
     color: white;
+    outline: none;
+    font-size: 16px;
+}
+
+.rover-button:active {
+    outline: none;
+    color: rgb(0, 0, 151);
 }
 
 .rover-button:hover {
