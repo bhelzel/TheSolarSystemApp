@@ -1,10 +1,14 @@
-.weather-nav {
+.chart-side-display {
     grid-area: wtn;
     color: white;
 }
-.weather-chart {
+.chart-display {
     grid-area: wtc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 330px;
 }
-.weather-chart:first-child {
-    width: 100%;
-}
+
+

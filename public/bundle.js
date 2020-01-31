@@ -986,7 +986,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const chartDisplayButton = document.getElementById('chart-display-button');
     chartDisplayButton.addEventListener('click', (e) => {
-        window.scroll(0, 600);
+        window.scrollTo(0, 600);
+        chartDisplayButton.style.display = 'none';
         setTimeout(
             new __WEBPACK_IMPORTED_MODULE_2__martian_weather__["a" /* default */]().render(),
             new __WEBPACK_IMPORTED_MODULE_4__martian_windspeed__["a" /* default */]().render(),

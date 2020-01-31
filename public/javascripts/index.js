@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const chartDisplayButton = document.getElementById('chart-display-button');
     chartDisplayButton.addEventListener('click', (e) => {
-        window.scroll(0, 600);
+        window.scrollTo(0, 600);
+        chartDisplayButton.style.display = 'none';
         setTimeout(
             new MartianWeather().render(),
             new MartianWindspeed().render(),

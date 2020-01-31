@@ -41,3 +41,29 @@
     cursor: pointer;
     background-color: rgb(0, 0, 151);
 }
+
+.button-div {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#chart-display-button {
+    color: white;
+    background-color: rgb(0, 0, 44);
+    justify-content: center;
+    justify-self: center;
+    width: 300px;
+    height: 50px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#chart-display-button:hover {
+    cursor: pointer;
+    background-color: rgb(0, 0, 151);
+    outline: none
+}
