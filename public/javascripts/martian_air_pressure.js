@@ -16,7 +16,7 @@ export default class MartianWeather {
                         type: 'line'
                     },
                     title: {
-                        text: 'Weekly Air Pressure Forecast'
+                        text: 'Last Week\'s Air Pressure'
                     },
                     subtitle: {
                         text: 'Source: NASA Mars InSight Weather Report'

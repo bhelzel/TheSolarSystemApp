@@ -984,9 +984,18 @@ document.addEventListener('DOMContentLoaded', () => {
         new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay, spirit).render();
     });
 
-    new __WEBPACK_IMPORTED_MODULE_2__martian_weather__["a" /* default */]().render();
-    new __WEBPACK_IMPORTED_MODULE_4__martian_windspeed__["a" /* default */]().render();
-    new __WEBPACK_IMPORTED_MODULE_5__martian_air_pressure__["a" /* default */]().render();
+    const chartDisplayButton = document.getElementById('chart-display-button');
+    chartDisplayButton.addEventListener('click', (e) => {
+        window.scroll(0, 600);
+        setTimeout(
+            new __WEBPACK_IMPORTED_MODULE_2__martian_weather__["a" /* default */]().render(),
+            new __WEBPACK_IMPORTED_MODULE_4__martian_windspeed__["a" /* default */]().render(),
+            new __WEBPACK_IMPORTED_MODULE_5__martian_air_pressure__["a" /* default */]().render(),
+            300
+        );
+        
+    });
+    
     // new MarsImageSlidebar(marsDisplay, "opportunity").render();
     // new MissionManifest(missionManifest, "curiosity").render();
     // new MartianWeather(martianWeather).render();
@@ -1964,7 +1973,7 @@ class MartianWeather {
                         type: 'line'
                     },
                     title: {
-                        text: 'Weekly Temperature Forecast'
+                        text: 'Last Week\'s Temperatures'
                     },
                     subtitle: {
                         text: 'Source: NASA Mars InSight Weather Report'
@@ -2558,7 +2567,7 @@ class MartianWindspeed {
                         type: 'line'
                     },
                     title: {
-                        text: 'Weekly Windspeed Forecast'
+                        text: 'Last Week\'s Windspeed'
                     },
                     subtitle: {
                         text: 'Source: NASA Mars InSight Weather Report'
@@ -2630,7 +2639,7 @@ class MartianWeather {
                         type: 'line'
                     },
                     title: {
-                        text: 'Weekly Air Pressure Forecast'
+                        text: 'Last Week\'s Air Pressure'
                     },
                     subtitle: {
                         text: 'Source: NASA Mars InSight Weather Report'

@@ -15,7 +15,7 @@ export default class MartianWindspeed {
                         type: 'line'
                     },
                     title: {
-                        text: 'Weekly Windspeed Forecast'
+                        text: 'Last Week\'s Windspeed'
                     },
                     subtitle: {
                         text: 'Source: NASA Mars InSight Weather Report'

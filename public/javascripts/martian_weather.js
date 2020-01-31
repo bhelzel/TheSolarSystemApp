@@ -16,7 +16,7 @@ export default class MartianWeather {
                         type: 'line'
                     },
                     title: {
-                        text: 'Weekly Temperature Forecast'
+                        text: 'Last Week\'s Temperatures'
                     },
                     subtitle: {
                         text: 'Source: NASA Mars InSight Weather Report'

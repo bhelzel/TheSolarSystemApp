@@ -28,9 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
         new MarsImageSlidebar(marsDisplay, spirit).render();
     });
 
-    new MartianWeather().render();
-    new MartianWindspeed().render();
-    new MartianPressure().render();
+    const chartDisplayButton = document.getElementById('chart-display-button');
+    chartDisplayButton.addEventListener('click', (e) => {
+        window.scroll(0, 600);
+        setTimeout(
+            new MartianWeather().render(),
+            new MartianWindspeed().render(),
+            new MartianPressure().render(),
+            300
+        );
+        
+    });
+    
     // new MarsImageSlidebar(marsDisplay, "opportunity").render();
     // new MissionManifest(missionManifest, "curiosity").render();
     // new MartianWeather(martianWeather).render();
