@@ -1,0 +1,13 @@
+#manifest-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.manifest {
+    display: flex;
+    flex-direction: column;
+}
+
+.manifest-data {
+    color: white;
+}

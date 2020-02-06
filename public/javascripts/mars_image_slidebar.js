@@ -10,7 +10,6 @@ export default class MarsImageSlidebar {
 
     render() {
         let links = '';
-        // console.log(this.rover);
         axios.get(`/roverphotos/${this.rover}`)
             .then(res => {
                 res.data.photos.forEach(photo => {

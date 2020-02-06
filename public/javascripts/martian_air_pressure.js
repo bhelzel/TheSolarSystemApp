@@ -1,6 +1,4 @@
 const axios = require('axios');
-// var Highcharts = require('highcharts');
-// import weatherchart from './weatherchart';
 
 export default class MartianWeather {
     render() {

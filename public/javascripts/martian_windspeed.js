@@ -1,7 +1,4 @@
 const axios = require('axios');
-// var Highcharts = require('highcharts');
-
-
 export default class MartianWindspeed {
     render() {
 
