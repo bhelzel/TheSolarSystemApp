@@ -72,11 +72,29 @@ app.get('/roverphotos/:rover', (request, response) => {
   }
 });
 
-app.get('/missionmanifest', (request, response) => {
-  const url = `https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs`;
+// app.get('/missionmanifest', (request, response) => {
+//   const url = `https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs`;
+
+//   fetch(url)
+//     .then(res => {
+//       return res.json();
+//     })
+//     .then(data => {
+//       console.log(data);
+//       response.send(data);
+//     })
+//     .catch(errors => {
+//       console.log(errors);
+//     });
+
+// });
+
+app.get(`/missionmanifest/:rover`, (request, response) => {
+  const url = `https://api.nasa.gov/mars-photos/api/v1/manifests/${request.params.rover}?api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs`;
   
   fetch(url)
-    .then(res => {
+    .then(res => {  
+      console.log(res);
       return res.json();
     })
     .then(data => {

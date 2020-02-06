@@ -10,7 +10,6 @@ export default class MartianWeather {
         axios.get('/martianweather')
             .then(res => {
                 weatherData = res.data;
-                console.log(weatherData);
                 Highcharts.chart('weather-chart', {
                     chart: {
                         type: 'line'
@@ -43,7 +42,6 @@ export default class MartianWeather {
                     series: [{
                         name: 'Average Air Temperature',
                         data: weatherData.sol_keys.map(key => {
-                            console.log(key);
                             return weatherData[key].AT.av;
                         })
                     }, {

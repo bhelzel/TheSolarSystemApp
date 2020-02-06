@@ -191,5 +191,5 @@ Highcharts.theme = {
                                     trackBorderColor: '#404043'
     }
 };
-// Apply the theme
+
 Highcharts.setOptions(Highcharts.theme);
