@@ -11,27 +11,28 @@
     <link rel="stylesheet" href="./stylesheets/mars_photos.css">
     <link rel="stylesheet" href="./stylesheets//buttons.css">
     <link rel="stylesheet" href="./stylesheets/main.css">
+    <link rel="stylesheet" href="./stylesheets/mission_manifest.css">
   </head>
   <body>
     <main id='main'>
       <div class="wrapper">
-        <div class="nav">
-          <div class="title-div">
-            <h2 class="title">Join us on the Red Planet</h2>
-            <h4 class="title">Select a rover to see it's photos!</h4>
-          </div>
-          <button class="rover-button" id="curiosity-button">Curiosity</button>
-          <button class="rover-button" id="opportunity-button">Opportunity</button>
-          <button class="rover-button" id="spirit-button">Spirit</button>
-        </div>
         <div id="mars-display"></div>
         <div id="manifest-display">
-          <div id="curiosity-manifest"></div>
-          <div id="opportunity-manifest"></div>
-          <div id="spirit-manifest"></div>
-        </div>
-        <div class="chart-side-display">
-
+          <div>
+            <div class="manifest" id="curiosity-manifest"></div>
+            <button class="rover-button" id="curiosity-button">Curiosity</button>
+          </div>
+          <div>
+            <div class="manifest" id="opportunity-manifest"></div>
+            <form>
+              
+              <button class="rover-button" id="opportunity-button">Opportunity</button>
+            </form>
+          </div>
+          <div>
+            <div class="manifest" id="spirit-manifest"></div>
+            <button class="rover-button" id="spirit-button">Spirit</button>
+          </div>
         </div>
         <div class="chart-display">
           <div class="button-div">

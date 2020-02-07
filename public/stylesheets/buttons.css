@@ -20,16 +20,19 @@
     justify-content: center;
     align-items: center;
 }
+
 .rover-button {
     height: 50px;
     width: 90%;
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
     background-color: rgb(0, 0, 44);
     color: white;
     outline: none;
     font-size: 16px;
+    margin-top: 280px;
 }
 
 .rover-button:active {

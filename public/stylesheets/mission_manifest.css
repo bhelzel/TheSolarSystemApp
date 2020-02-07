@@ -1,0 +1,20 @@
+#manifest-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 550px;
+}
+
+.manifest {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    position: relative;
+}
+
+.manifest-data {
+    color: white;
+}
+
+#rover-name {
+    font-size: 24px;
+}

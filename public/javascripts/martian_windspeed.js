@@ -1,7 +1,4 @@
 const axios = require('axios');
-// var Highcharts = require('highcharts');
-
-
 export default class MartianWindspeed {
     render() {
 
@@ -42,17 +39,17 @@ export default class MartianWindspeed {
                     series: [{
                         name: 'Average Windspeed',
                         data: weatherData.sol_keys.map(key => {
-                            return Math.floor(weatherData[key].HWS.av);
+                            return parseFloat(weatherData[key].HWS.av.toFixed(2));
                         })
                     }, {
                         name: 'Min',
                         data: weatherData.sol_keys.map(key => {
-                            return Math.floor(weatherData[key].HWS.mn);
+                            return parseFloat(weatherData[key].HWS.mn.toFixed(2));
                         })
                     }, {
                         name: 'Max',
                         data: weatherData.sol_keys.map(key => {
-                            return Math.floor(weatherData[key].HWS.mx);
+                            return parseFloat(weatherData[key].HWS.mx.toFixed(2));
                         })
                     }]
                 });

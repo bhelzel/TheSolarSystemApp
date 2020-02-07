@@ -1044,12 +1044,12 @@ class MissionManifest {
         axios.get(`/missionmanifest/${this.rover}`)
             .then(res => {
                 let contents = `<div class="manifest-div">`;
-                contents = contents.concat(`<h3 class="rover-name">${res.data.photo_manifest.name}</h3>`);
-                contents = contents.concat(`<h4 class="launch-data>${res.data.photo_manifest.launch_date}</h4>`);
-                contents = contents.concat(`<h4 class="landing-date">${res.data.photo_manifest.landing_date}</h4>`);
-                contents = contents.concat(`<h4 class="max-sol">${res.data.photo_manifest.max_sol}</h4>`);
-                contents = contents.concat(`<h4 class="status">${res.data.photo_manifest.status}</h4>`);
-                contents = contents.concat(`<h4 class="total-photos">${res.data.photo_manifest.total_photos}</h4></div>`);
+                contents = contents.concat(`<p class="manifest-data" id="rover-name">Mission: ${res.data.photo_manifest.name}</p>`);
+                contents = contents.concat(`<p class="manifest-data" id="launch-data>Launch Date: ${res.data.photo_manifest.launch_date}</p>`);
+                contents = contents.concat(`<p class="manifest-data" id="landing-date">Landing Date: ${res.data.photo_manifest.landing_date}</p>`);
+                contents = contents.concat(`<p class="manifest-data" id="max-sol">Max Sol: ${res.data.photo_manifest.max_sol}</p>`);
+                contents = contents.concat(`<p class="manifest-data" id="status">Status: ${res.data.photo_manifest.status[0].toUpperCase() + res.data.photo_manifest.status.slice(1)}</p>`);
+                contents = contents.concat(`<p class="manifest-data" id="total-photos">Total Photos: ${res.data.photo_manifest.total_photos}</p></div>`);
                 this.container.innerHTML = contents;
             });
     }
@@ -1956,7 +1956,6 @@ class MarsImageSlidebar {
 
     render() {
         let links = '';
-        // console.log(this.rover);
         axios.get(`/roverphotos/${this.rover}`)
             .then(res => {
                 res.data.photos.forEach(photo => {
@@ -1979,8 +1978,6 @@ class MarsImageSlidebar {
 
 "use strict";
 const axios = __webpack_require__(1);
-// var Highcharts = require('highcharts');
-// import weatherchart from './weatherchart';
 
 class MartianWeather {
     render() {
@@ -2049,9 +2046,6 @@ class MartianWeather {
 
 "use strict";
 const axios = __webpack_require__(1);
-// var Highcharts = require('highcharts');
-
-
 class MartianWindspeed {
     render() {
 
@@ -2092,17 +2086,17 @@ class MartianWindspeed {
                     series: [{
                         name: 'Average Windspeed',
                         data: weatherData.sol_keys.map(key => {
-                            return Math.floor(weatherData[key].HWS.av);
+                            return parseFloat(weatherData[key].HWS.av.toFixed(2));
                         })
                     }, {
                         name: 'Min',
                         data: weatherData.sol_keys.map(key => {
-                            return Math.floor(weatherData[key].HWS.mn);
+                            return parseFloat(weatherData[key].HWS.mn.toFixed(2));
                         })
                     }, {
                         name: 'Max',
                         data: weatherData.sol_keys.map(key => {
-                            return Math.floor(weatherData[key].HWS.mx);
+                            return parseFloat(weatherData[key].HWS.mx.toFixed(2));
                         })
                     }]
                 });
@@ -2120,8 +2114,6 @@ class MartianWindspeed {
 
 "use strict";
 const axios = __webpack_require__(1);
-// var Highcharts = require('highcharts');
-// import weatherchart from './weatherchart';
 
 class MartianWeather {
     render() {
