@@ -9,6 +9,15 @@
     flex-direction: column;
     margin-left: 10px;
     position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .manifest-data {

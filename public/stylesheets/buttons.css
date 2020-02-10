@@ -28,21 +28,21 @@
     margin-right: 10px;
     border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
-    background-color: rgb(0, 0, 44);
+    background-color: rgb(184, 6, 6);
     color: white;
     outline: none;
     font-size: 16px;
-    margin-top: 280px;
+    /* margin-top: 280px; */
 }
 
 .rover-button:active {
     outline: none;
-    color: rgb(0, 0, 151);
+    color: rgb(168, 46, 15);
 }
 
 .rover-button:hover {
     cursor: pointer;
-    background-color: rgb(0, 0, 151);
+    background-color: rgb(107, 1, 1);
 }
 
 .button-div {
