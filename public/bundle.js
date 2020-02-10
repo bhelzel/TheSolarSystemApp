@@ -978,29 +978,67 @@ document.addEventListener('DOMContentLoaded', () => {
     new __WEBPACK_IMPORTED_MODULE_0__mission_manifest__["a" /* default */](spiritManifest, spirit).render();
 
     const marsDisplay = document.getElementById('mars-display');
-    const curiosityButton = document.getElementById('curiosity-button');
-    curiosityButton.addEventListener('click', (e) => {
+    const curiosityForm = document.getElementById('curiosity-form');
+    // const curiosityButton = document.getElementById('curiosity-button');
+    curiosityForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const form = new FormData(curiosityForm); 
+        // const range = document.getElementsByName('curiosity-range');
+        let sol = form.get('curiosity-range');
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const curiosity = "curiosity";
-        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay, curiosity).render();
+        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay, curiosity, sol).render();
     });
-
-    const opportunityButton = document.getElementById('opportunity-button');
-    opportunityButton.addEventListener('click', (e) => {
+    const opportunityForm = document.getElementById('opportunity-form');
+    // const opportunityButton = document.getElementById('opportunity-button');
+    opportunityForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const form = new FormData(opportunityForm);
+        // const range = document.getElementsByName('opportunity-range');
+        let sol = form.get('opportunity-range');
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const opportunity = "opportunity";
-        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay, opportunity).render();
+        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay, opportunity, sol).render();
     });
 
-    const spiritButton = document.getElementById('spirit-button');
-    spiritButton.addEventListener('click', (e) => { 
-        manifestDisplay.style.display = 'none'; 
+    const spiritForm = document.getElementById('spirit-form');
+    // const spiritButton = document.getElementById('spirit-button');
+    spiritForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const form = new FormData(spiritForm);
+        // const range = document.getElementsByName('spirit-range');
+        let sol = form.get('spirit-range');
+        manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const spirit = "spirit";
-        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay, spirit).render();
+        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay, spirit, sol).render();
     });
+    
+    // const curiosityButton = document.getElementById('curiosity-button');
+    // curiosityButton.addEventListener('click', (e) => {
+    //     manifestDisplay.style.display = 'none';
+    //     marsDisplay.style.display = 'flex';
+    //     const curiosity = "curiosity";
+    //     new MarsImageSlidebar(marsDisplay, curiosity).render();
+    // });
+
+    // const opportunityButton = document.getElementById('opportunity-button');
+    // opportunityButton.addEventListener('click', (e) => {
+    //     manifestDisplay.style.display = 'none';
+    //     marsDisplay.style.display = 'flex';
+    //     const opportunity = "opportunity";
+    //     new MarsImageSlidebar(marsDisplay, opportunity).render();
+    // });
+
+    // const spiritButton = document.getElementById('spirit-button');
+    // spiritButton.addEventListener('click', (e) => { 
+    //     manifestDisplay.style.display = 'none'; 
+    //     marsDisplay.style.display = 'flex';
+    //     const spirit = "spirit";
+    //     new MarsImageSlidebar(marsDisplay, spirit).render();
+    // });
 
     const chartDisplayButton = document.getElementById('chart-display-button');
     chartDisplayButton.addEventListener('click', (e) => {
@@ -1948,19 +1986,21 @@ const axios = __webpack_require__(1);
 
 class MarsImageSlidebar {
 
-    constructor(container, rover="curiosity") {
+    constructor(container, rover, sol) {
         this.container = container;
         this.container.innerHTML = '';
         this.rover = rover;
+        this.sol = sol;
     }
 
     render() {
         let links = '';
-        axios.get(`/roverphotos/${this.rover}`)
+        axios.get(`/roverphotos/${this.rover}/${this.sol}`)
             .then(res => {
+                (res.data.photos.length < 1 ? console.log('no-photos') :
                 res.data.photos.forEach(photo => {
                     links = links.concat(`<img class="rover-image" src=${photo.img_src} />`);
-                });
+                }));
                 this.container.innerHTML = links;
             })
             .catch(function (error) {

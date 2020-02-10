@@ -18,20 +18,32 @@
       <div class="wrapper">
         <div id="mars-display"></div>
         <div id="manifest-display">
-          <div>
+          <div class="manifest-container">
             <div class="manifest" id="curiosity-manifest"></div>
-            <button class="rover-button" id="curiosity-button">Curiosity</button>
-          </div>
-          <div>
-            <div class="manifest" id="opportunity-manifest"></div>
-            <form>
-              
-              <button class="rover-button" id="opportunity-button">Opportunity</button>
+            <form id="curiosity-form">
+              <label class="input-label">Select a day:
+                <input type="range" class="sol-input" id="curiosity-sols" name="curiosity-range" min="0" max="2540">
+              </label>
+              <button class="rover-button" id="curiosity-button" type="submit">Curiosity</button>
             </form>
           </div>
-          <div>
+          <div class="manifest-container">
+            <div class="manifest" id="opportunity-manifest"></div>
+            <form id="opportunity-form">
+              <label class="input-label">Select a day:
+                <input type="range" class="sol-input" name="range" min="0" max="5111">
+              </label>
+              <button type="submit" class="rover-button" id="opportunity-button" type="submit">Opportunity</button>
+            </form>
+          </div>
+          <div class="manifest-container">
             <div class="manifest" id="spirit-manifest"></div>
-            <button class="rover-button" id="spirit-button">Spirit</button>
+            <form id="spirit-form">
+              <label class="input-label">Select a day:
+                <input type="range" class="sol-input" name="range" min="0" max="2208">
+              </label>
+              <button class="rover-button" id="spirit-button" type="submit">Spirit</button>
+            </form>
           </div>
         </div>
         <div class="chart-display">
