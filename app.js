@@ -10,6 +10,20 @@ app.get('/', (request, response) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
+app.get('/apod', (request, response) => {
+  const url = "https://api.nasa.gov/planetary/apod?api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs";
+  fetch(url)
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
+
 app.get('/photos', (req, response) => {
   
   const url = "https://images-api.nasa.gov/search?q=Earth";

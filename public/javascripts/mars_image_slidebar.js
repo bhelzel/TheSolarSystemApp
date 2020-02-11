@@ -13,7 +13,10 @@ export default class MarsImageSlidebar {
         let links = '';
         axios.get(`/roverphotos/${this.rover}/${this.sol}`)
             .then(res => {
-                (res.data.photos.length < 1 ? console.log('no-photos') :
+                (res.data.photos.length < 1 ? 
+                (this.rover === 'opportunity' ? 
+                new MarsImageSlidebar(this.container, this.rover, 2) :
+                new MarsImageSlidebar(this.container, this.rover, 300)) :
                 res.data.photos.forEach(photo => {
                     links = links.concat(`<img class="rover-image" src=${photo.img_src} />`);
                 }));

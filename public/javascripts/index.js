@@ -3,10 +3,14 @@ import MarsImageSlidebar from './mars_image_slidebar';
 import MartianWeather from './martian_weather';
 import MartianWindspeed from './martian_windspeed';
 import MartianPressure from './martian_air_pressure';
+import Apod from './apod';
 
 
 document.addEventListener('DOMContentLoaded', () => {
     
+    const apod = new Apod();
+    apod.render();
+
     const manifestDisplay = document.getElementById('manifest-display');
     new MissionManifest(manifestDisplay).render();
 
@@ -23,24 +27,22 @@ document.addEventListener('DOMContentLoaded', () => {
     new MissionManifest(spiritManifest, spirit).render();
 
     const marsDisplay = document.getElementById('mars-display');
+
     const curiosityForm = document.getElementById('curiosity-form');
-    // const curiosityButton = document.getElementById('curiosity-button');
     curiosityForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const form = new FormData(curiosityForm); 
-        // const range = document.getElementsByName('curiosity-range');
         let sol = form.get('curiosity-range');
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const curiosity = "curiosity";
         new MarsImageSlidebar(marsDisplay, curiosity, sol).render();
     });
+
     const opportunityForm = document.getElementById('opportunity-form');
-    // const opportunityButton = document.getElementById('opportunity-button');
     opportunityForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const form = new FormData(opportunityForm);
-        // const range = document.getElementsByName('opportunity-range');
         let sol = form.get('opportunity-range');
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
@@ -49,46 +51,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const spiritForm = document.getElementById('spirit-form');
-    // const spiritButton = document.getElementById('spirit-button');
     spiritForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const form = new FormData(spiritForm);
-        // const range = document.getElementsByName('spirit-range');
         let sol = form.get('spirit-range');
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const spirit = "spirit";
         new MarsImageSlidebar(marsDisplay, spirit, sol).render();
     });
-    
-    // const curiosityButton = document.getElementById('curiosity-button');
-    // curiosityButton.addEventListener('click', (e) => {
-    //     manifestDisplay.style.display = 'none';
-    //     marsDisplay.style.display = 'flex';
-    //     const curiosity = "curiosity";
-    //     new MarsImageSlidebar(marsDisplay, curiosity).render();
-    // });
-
-    // const opportunityButton = document.getElementById('opportunity-button');
-    // opportunityButton.addEventListener('click', (e) => {
-    //     manifestDisplay.style.display = 'none';
-    //     marsDisplay.style.display = 'flex';
-    //     const opportunity = "opportunity";
-    //     new MarsImageSlidebar(marsDisplay, opportunity).render();
-    // });
-
-    // const spiritButton = document.getElementById('spirit-button');
-    // spiritButton.addEventListener('click', (e) => { 
-    //     manifestDisplay.style.display = 'none'; 
-    //     marsDisplay.style.display = 'flex';
-    //     const spirit = "spirit";
-    //     new MarsImageSlidebar(marsDisplay, spirit).render();
-    // });
 
     const chartDisplayButton = document.getElementById('chart-display-button');
+    const closeCharts = document.getElementById('close-charts');
+    const charts = document.getElementsByClassName('chart-container');
+    console.log(charts);
+
     chartDisplayButton.addEventListener('click', (e) => {
         let scroll = setInterval(() => window.scrollBy(0, 10), 20);
         chartDisplayButton.style.display = 'none';
+        closeCharts.style.display = 'flex';
         setTimeout(
             new MartianWeather().render(),
             new MartianWindspeed().render(),
@@ -103,8 +84,23 @@ document.addEventListener('DOMContentLoaded', () => {
             1500
         );
     });
+
+    closeCharts.addEventListener('click', (e) => {
+        let scroll = setInterval(() => window.scrollBy(0, -10), 20);
+        // let style = () => charts.forEach(chart => {chart[0].style.display = 'none'});
+        chartDisplayButton.style.display = 'inline';
+        closeCharts.style.display = 'none';
+        setTimeout(
+            style,
+            250
+        );
+        const stopScroll = () => {
+            clearInterval(scroll);
+        };
+        setTimeout(
+            stopScroll,
+            1500
+        );
+    });
     
-    // new MarsImageSlidebar(marsDisplay, "opportunity").render();
-    // new MissionManifest(missionManifest, "curiosity").render();
-    // new MartianWeather(martianWeather).render();
 });
