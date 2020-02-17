@@ -949,10 +949,15 @@ module.exports = Cancel;
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mission_manifest__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mission_manifest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__mission_manifest__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__martian_weather__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__martian_weather___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__martian_weather__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__martian_windspeed__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__martian_windspeed___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__martian_windspeed__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__martian_air_pressure__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__martian_air_pressure___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__martian_air_pressure__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__apod__ = __webpack_require__(33);
 
 
@@ -968,19 +973,19 @@ document.addEventListener('DOMContentLoaded', () => {
     new __WEBPACK_IMPORTED_MODULE_5__apod__["a" /* default */](apodContainer).render();
 
     const manifestDisplay = document.getElementById('manifest-display');
-    new __WEBPACK_IMPORTED_MODULE_0__mission_manifest__["a" /* default */](manifestDisplay).render();
+    new __WEBPACK_IMPORTED_MODULE_0__mission_manifest__["default"](manifestDisplay).render();
 
     const curiosityManifest = document.getElementById('curiosity-manifest');
     const curiosity = "curiosity";
-    new __WEBPACK_IMPORTED_MODULE_0__mission_manifest__["a" /* default */](curiosityManifest, curiosity).render();
+    new __WEBPACK_IMPORTED_MODULE_0__mission_manifest__["default"](curiosityManifest, curiosity).render();
 
     const opportunityManifest = document.getElementById('opportunity-manifest');
     const opportunity = "opportunity";
-    new __WEBPACK_IMPORTED_MODULE_0__mission_manifest__["a" /* default */](opportunityManifest, opportunity).render();
+    new __WEBPACK_IMPORTED_MODULE_0__mission_manifest__["default"](opportunityManifest, opportunity).render();
     
     const spiritManifest = document.getElementById('spirit-manifest');
     const spirit = "spirit";
-    new __WEBPACK_IMPORTED_MODULE_0__mission_manifest__["a" /* default */](spiritManifest, spirit).render();
+    new __WEBPACK_IMPORTED_MODULE_0__mission_manifest__["default"](spiritManifest, spirit).render();
 
     const marsDisplay = document.getElementById('mars-display');
 
@@ -992,7 +997,7 @@ document.addEventListener('DOMContentLoaded', () => {
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const curiosity = "curiosity";
-        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay, curiosity, sol).render();
+        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["default"](marsDisplay, curiosity, sol).render();
     });
 
     const opportunityForm = document.getElementById('opportunity-form');
@@ -1003,7 +1008,7 @@ document.addEventListener('DOMContentLoaded', () => {
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const opportunity = "opportunity";
-        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay, opportunity, sol).render();
+        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["default"](marsDisplay, opportunity, sol).render();
     });
 
     const spiritForm = document.getElementById('spirit-form');
@@ -1014,7 +1019,7 @@ document.addEventListener('DOMContentLoaded', () => {
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const spirit = "spirit";
-        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["a" /* default */](marsDisplay, spirit, sol).render();
+        new __WEBPACK_IMPORTED_MODULE_1__mars_image_slidebar__["default"](marsDisplay, spirit, sol).render();
     });
 
     const chartDisplayButton = document.getElementById('chart-display-button');
@@ -1028,9 +1033,9 @@ document.addEventListener('DOMContentLoaded', () => {
         chartDisplayButton.style.display = 'none';
         closeCharts.style.display = 'flex';
         setTimeout(
-            new __WEBPACK_IMPORTED_MODULE_2__martian_weather__["a" /* default */]().render(),
-            new __WEBPACK_IMPORTED_MODULE_3__martian_windspeed__["a" /* default */]().render(),
-            new __WEBPACK_IMPORTED_MODULE_4__martian_air_pressure__["a" /* default */]().render(),
+            new __WEBPACK_IMPORTED_MODULE_2__martian_weather__["default"]().render(),
+            new __WEBPACK_IMPORTED_MODULE_3__martian_windspeed__["default"]().render(),
+            new __WEBPACK_IMPORTED_MODULE_4__martian_air_pressure__["default"]().render(),
             250
         );
         const stopScroll = () => {
@@ -1066,34 +1071,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /***/ }),
 /* 10 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, __webpack_exports__) {
 
 "use strict";
-const axios = __webpack_require__(1);
-
-class MissionManifest {
-    
-    constructor(container, rover) {
-        this.container = container;
-        this.rover = rover;
-    }
-
-    render() {
-        axios.get(`/missionmanifest/${this.rover}`)
-            .then(res => {
-                let contents = `<div class="manifest-div">`;
-                contents = contents.concat(`<p class="manifest-data" id="rover-name">Mission: ${res.data.photo_manifest.name}</p>`);
-                contents = contents.concat(`<p class="manifest-data" id="launch-data>Launch Date: ${res.data.photo_manifest.launch_date}</p>`);
-                contents = contents.concat(`<p class="manifest-data" id="landing-date">Landing Date: ${res.data.photo_manifest.landing_date}</p>`);
-                contents = contents.concat(`<p class="manifest-data" id="max-sol">Max Sol: ${res.data.photo_manifest.max_sol}</p>`);
-                contents = contents.concat(`<p class="manifest-data" id="status">Status: ${res.data.photo_manifest.status[0].toUpperCase() + res.data.photo_manifest.status.slice(1)}</p>`);
-                contents = contents.concat(`<p class="manifest-data" id="total-photos">Total Photos: ${res.data.photo_manifest.total_photos}</p></div>`);
-                this.container.innerHTML = contents;
-            });
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = MissionManifest;
-
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/hwatsonbenjamin/Desktop/JSProject/public/javascripts/mission_manifest.js'");
 
 /***/ }),
 /* 11 */
@@ -1979,249 +1960,31 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 29 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, __webpack_exports__) {
 
 "use strict";
-const axios = __webpack_require__(1);
-
-class MarsImageSlidebar {
-
-    constructor(container, rover, sol) {
-        this.container = container;
-        this.container.innerHTML = '';
-        this.rover = rover;
-        this.sol = sol;
-    }
-
-    render() {
-        let links = '';
-        axios.get(`/roverphotos/${this.rover}/${this.sol}`)
-            .then(res => {
-                (res.data.photos.length < 1 ?
-                (this.rover === 'opportunity' ?
-                new MarsImageSlidebar(this.container, this.rover, 2) :
-                new MarsImageSlidebar(this.container, this.rover, 300)) :
-                res.data.photos.forEach(photo => {
-                  photo.img_src === underfined ?
-                  links = links :
-                  links = links.concat(`<div><img class="rover-image" src=${photo.img_src} />
-                  <p>${photo.cam}</p>`);
-                }));
-                this.container.innerHTML = links;
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = MarsImageSlidebar;
-
-
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/hwatsonbenjamin/Desktop/JSProject/public/javascripts/mars_image_slidebar.js'");
 
 /***/ }),
 /* 30 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, __webpack_exports__) {
 
 "use strict";
-const axios = __webpack_require__(1);
-
-class MartianWeather {
-    render() {
-        
-        let weatherData;
-
-        axios.get('/martianweather')
-            .then(res => {
-                weatherData = res.data;
-                Highcharts.chart('weather-chart', {
-                    chart: {
-                        type: 'line'
-                    },
-                    title: {
-                        text: 'Last Week\'s Temperatures'
-                    },
-                    subtitle: {
-                        text: 'Source: NASA Mars InSight Weather Report'
-                    },
-                    xAxis: {
-                        title: {
-                            text: 'Sol'
-                        },
-                        categories: weatherData.sol_keys
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Temperature (°F)'
-                        }
-                    },
-                    plotOptions: {
-                        line: {
-                            dataLabels: {
-                                enabled: true
-                            },
-                            enableMouseTracking: false
-                        }
-                    },
-                    series: [{
-                        name: 'Average Air Temperature',
-                        data: weatherData.sol_keys.map(key => {
-                            return weatherData[key].AT.av;
-                        })
-                    }, {
-                        name: 'Low',
-                        data: weatherData.sol_keys.map(key => {
-                            return weatherData[key].AT.mn;
-                    })
-                    }, {
-                        name: 'High',
-                        data: weatherData.sol_keys.map(key => {
-                            return weatherData[key].AT.mx;
-                        })
-                    }]
-                });
-            });    
-    }
-
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = MartianWeather;
-
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/hwatsonbenjamin/Desktop/JSProject/public/javascripts/martian_weather.js'");
 
 /***/ }),
 /* 31 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, __webpack_exports__) {
 
 "use strict";
-const axios = __webpack_require__(1);
-class MartianWindspeed {
-    render() {
-
-        let weatherData;
-
-        axios.get('/martianweather')
-            .then(res => {
-                weatherData = res.data;
-                Highcharts.chart('windspeed-chart', {
-                    chart: {
-                        type: 'line'
-                    },
-                    title: {
-                        text: 'Last Week\'s Windspeed'
-                    },
-                    subtitle: {
-                        text: 'Source: NASA Mars InSight Weather Report'
-                    },
-                    xAxis: {
-                        title: {
-                            text: 'Sol'
-                        },
-                        categories: weatherData.sol_keys
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Windspeed (mph)'
-                        }
-                    },
-                    plotOptions: {
-                        line: {
-                            dataLabels: {
-                                enabled: true
-                            },
-                            enableMouseTracking: false
-                        }
-                    },
-                    series: [{
-                        name: 'Average Windspeed',
-                        data: weatherData.sol_keys.map(key => {
-                            return parseFloat(weatherData[key].HWS.av.toFixed(2));
-                        })
-                    }, {
-                        name: 'Min',
-                        data: weatherData.sol_keys.map(key => {
-                            return parseFloat(weatherData[key].HWS.mn.toFixed(2));
-                        })
-                    }, {
-                        name: 'Max',
-                        data: weatherData.sol_keys.map(key => {
-                            return parseFloat(weatherData[key].HWS.mx.toFixed(2));
-                        })
-                    }]
-                });
-    
-            });
-    }
-
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = MartianWindspeed;
-
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/hwatsonbenjamin/Desktop/JSProject/public/javascripts/martian_windspeed.js'");
 
 /***/ }),
 /* 32 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, __webpack_exports__) {
 
 "use strict";
-const axios = __webpack_require__(1);
-
-class MartianWeather {
-    render() {
-
-        let weatherData;
-
-        axios.get('/martianweather')
-            .then(res => {
-                weatherData = res.data;
-                Highcharts.chart('pressure-chart', {
-                    chart: {
-                        type: 'line'
-                    },
-                    title: {
-                        text: 'Last Week\'s Air Pressure'
-                    },
-                    subtitle: {
-                        text: 'Source: NASA Mars InSight Weather Report'
-                    },
-                    xAxis: {
-                        title: {
-                            text: 'Sol'
-                        },
-                        categories: weatherData.sol_keys
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Pressure (Pa)'
-                        }
-                    },
-                    plotOptions: {
-                        line: {
-                            dataLabels: {
-                                enabled: true
-                            },
-                            enableMouseTracking: false
-                        }
-                    },
-                    series: [{
-                        name: 'Average Air Temperature',
-                        data: weatherData.sol_keys.map(key => {
-                            return weatherData[key].PRE.av;
-                        })
-                    }, {
-                        name: 'Low',
-                        data: weatherData.sol_keys.map(key => {
-                            return weatherData[key].PRE.mn;
-                        })
-                    }, {
-                        name: 'High',
-                        data: weatherData.sol_keys.map(key => {
-                            return weatherData[key].PRE.mx;
-                        })
-                    }]
-                });
-            });
-    }
-
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = MartianWeather;
-
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/hwatsonbenjamin/Desktop/JSProject/public/javascripts/martian_air_pressure.js'");
 
 /***/ }),
 /* 33 */
