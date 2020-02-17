@@ -964,8 +964,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    const apod = new __WEBPACK_IMPORTED_MODULE_5__apod__["a" /* default */]();
-    apod.render();
+    const apodContainer = document.getElementById('apod-container');
+    new __WEBPACK_IMPORTED_MODULE_5__apod__["a" /* default */](apodContainer).render();
 
     const manifestDisplay = document.getElementById('manifest-display');
     new __WEBPACK_IMPORTED_MODULE_0__mission_manifest__["a" /* default */](manifestDisplay).render();
@@ -1023,6 +1023,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(charts);
 
     chartDisplayButton.addEventListener('click', (e) => {
+        e.preventDefault();
         let scroll = setInterval(() => window.scrollBy(0, 10), 20);
         chartDisplayButton.style.display = 'none';
         closeCharts.style.display = 'flex';
@@ -1042,12 +1043,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     closeCharts.addEventListener('click', (e) => {
+        e.preventDefault();
         let scroll = setInterval(() => window.scrollBy(0, -10), 20);
-        // let style = () => charts.forEach(chart => {chart[0].style.display = 'none'});
+        let style = () => charts.forEach(chart => {chart.style.display = 'none'});
         chartDisplayButton.style.display = 'inline';
         closeCharts.style.display = 'none';
+        
         setTimeout(
-            style,
+            style(),
             250
         );
         const stopScroll = () => {
@@ -1994,22 +1997,26 @@ class MarsImageSlidebar {
         let links = '';
         axios.get(`/roverphotos/${this.rover}/${this.sol}`)
             .then(res => {
-                (res.data.photos.length < 1 ? 
-                (this.rover === 'opportunity' ? 
+                (res.data.photos.length < 1 ?
+                (this.rover === 'opportunity' ?
                 new MarsImageSlidebar(this.container, this.rover, 2) :
                 new MarsImageSlidebar(this.container, this.rover, 300)) :
                 res.data.photos.forEach(photo => {
-                    links = links.concat(`<img class="rover-image" src=${photo.img_src} />`);
+                  photo.img_src === underfined ?
+                  links = links :
+                  links = links.concat(`<div><img class="rover-image" src=${photo.img_src} />
+                  <p>${photo.cam}</p>`);
                 }));
                 this.container.innerHTML = links;
             })
             .catch(function (error) {
                 console.log(error);
-            }); 
+            });
 
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = MarsImageSlidebar;
+
 
 
 /***/ }),
@@ -2225,14 +2232,24 @@ const axios = __webpack_require__(1);
 
 class Apod {
 
+    constructor(container) {
+        this.container = container;
+    }
+
     render() {
         axios.get('/apod')
             .then(res => {
-                return res.json();
+                console.log(res);
+                let contents = `<div class="apod-img">`;
+                contents = contents.concat(`<img src="${res.data.url}"/></div>`);
+                contents = contents.concat(`<div class="apod-explanation">`);
+                contents = contents.concat(`<p class="apod-text">${res.data.explanation}</p></div>`);
+                this.container.innerHTML = contents;  
             })
-            .then(data => {
-                console.log(data);
+            .catch (function (error) {
+                console.log(error);
             });
+        
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Apod;

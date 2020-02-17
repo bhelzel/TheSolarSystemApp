@@ -12,61 +12,82 @@
     <link rel="stylesheet" href="./stylesheets//buttons.css">
     <link rel="stylesheet" href="./stylesheets/main.css">
     <link rel="stylesheet" href="./stylesheets/mission_manifest.css">
+    <link rel="stylesheet" href="./stylesheets/apod.css">
   </head>
-  <body>
+  <body class="body">
+    <nav>
+      <a href="#apod-container" class="nav-anchor">Welcome</a>
+      <a href="#mercury" class="nav-anchor">Mercury</a>
+      <a href="#venus" class="nav-anchor">Venus</a>
+      <a href="#earth" class="nav-anchor">Earth</a>
+      <a href="#mars" class="nav-anchor">Mars</a>
+      <a href="#saturn" class="nav-anchor">Saturn</a>
+      <a href="#jupiter" class="nav-anchor">Jupiter</a>
+      <a href="#uranus" class="nav-anchor">Uranus</a>
+      <a href="#neptune" class="nav-anchor">Neptune</a>
+      <a href="#pluto" class="nav-anchor">Pluto</a>
+    </nav>
     <main id='main'>
       <div class="wrapper">
-        <div class="greeting">
-          <div class="apod"></div>
+        <div id="apod-container" class="planet"></div>
+        <div id="mercury" class="planet"></div>
+        <div id="venus" class="planet"></div>
+        <div id="earth" class="planet"></div>
+        <div id="mars" class="planet">
+          <div id="mars-display"></div>
+          <div id="manifest-display">
+            <div class="manifest-container">
+              <div class="manifest" id="curiosity-manifest"></div>
+              <form id="curiosity-form" class="photo-form">
+                <label class="input-label">Select a day:
+                  <br>
+                  <input type="range" class="sol-input" id="curiosity-sols" name="curiosity-range" min="0" max="2540">
+                </label>
+                <button class="rover-button" id="curiosity-button" type="submit">Curiosity</button>
+              </form>
+            </div>
+            <div class="manifest-container">
+              <div class="manifest" id="opportunity-manifest"></div>
+              <form id="opportunity-form" class="photo-form">
+                <label class="input-label">Select a day:
+                  <br>
+                  <input type="range" class="sol-input" name="range" min="0" max="5111">
+                </label>
+                <button type="submit" class="rover-button" id="opportunity-button" type="submit">Opportunity</button>
+              </form>
+            </div>
+            <div class="manifest-container">
+              <div class="manifest" id="spirit-manifest"></div>
+              <form id="spirit-form" class="photo-form">
+                <label class="input-label">Select a day:
+                  <br>
+                  <input type="range" class="sol-input" name="range" min="0" max="2208">
+                </label>
+                <button class="rover-button" id="spirit-button" type="submit">Spirit</button>
+              </form>
+            </div>
+          </div>
+          <div id="chart-display" >
+            <div class="button-div">
+              <button id="chart-display-button">Last Week on Mars!</button>
+            </div>     
+            <div class="chart-container">
+              <div id="weather-chart" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
+            </div>
+            <div class="chart-container">
+              <div id="windspeed-chart" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
+            </div>
+            <div class="chart-container">
+              <div id="pressure-chart" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
+            </div>
+            <button id="close-charts">Close Charts</button>
+          </div>
         </div>
-        <div id="mars-display"></div>
-        <div id="manifest-display">
-          <div class="manifest-container">
-            <div class="manifest" id="curiosity-manifest"></div>
-            <form id="curiosity-form" class="photo-form">
-              <label class="input-label">Select a day:
-                <br>
-                <input type="range" class="sol-input" id="curiosity-sols" name="curiosity-range" min="0" max="2540">
-              </label>
-              <button class="rover-button" id="curiosity-button" type="submit">Curiosity</button>
-            </form>
-          </div>
-          <div class="manifest-container">
-            <div class="manifest" id="opportunity-manifest"></div>
-            <form id="opportunity-form" class="photo-form">
-              <label class="input-label">Select a day:
-                <br>
-                <input type="range" class="sol-input" name="range" min="0" max="5111">
-              </label>
-              <button type="submit" class="rover-button" id="opportunity-button" type="submit">Opportunity</button>
-            </form>
-          </div>
-          <div class="manifest-container">
-            <div class="manifest" id="spirit-manifest"></div>
-            <form id="spirit-form" class="photo-form">
-              <label class="input-label">Select a day:
-                <br>
-                <input type="range" class="sol-input" name="range" min="0" max="2208">
-              </label>
-              <button class="rover-button" id="spirit-button" type="submit">Spirit</button>
-            </form>
-          </div>
-        </div>
-        <div class="chart-display" >
-          <div class="button-div">
-            <button id="chart-display-button">Last Week on Mars!</button>
-          </div>     
-          <div class="chart-container">
-            <div id="weather-chart" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
-          </div>
-          <div class="chart-container">
-            <div id="windspeed-chart" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
-          </div>
-          <div class="chart-container">
-            <div id="pressure-chart" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
-          </div>
-          <button id="close-charts">Close Charts</button>
-        </div>
+        <div id="saturn" class="planet"></div>
+        <div id="jupiter" class="planet"></div>
+        <div id="uranus" class="planet"></div>
+        <div id="neptune" class="planet"></div>
+        <div id="pluto" class="planet"></div>
       </div>  
     </main>
   </body>

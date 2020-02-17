@@ -17,7 +17,7 @@ app.get('/apod', (request, response) => {
       return res.json();
     })
     .then(data => {
-      console.log(data);
+      response.send(data);
     })
     .catch(error => {
       console.log(error);

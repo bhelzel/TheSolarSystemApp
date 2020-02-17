@@ -8,8 +8,8 @@ import Apod from './apod';
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    const apod = new Apod();
-    apod.render();
+    const apodContainer = document.getElementById('apod-container');
+    new Apod(apodContainer).render();
 
     const manifestDisplay = document.getElementById('manifest-display');
     new MissionManifest(manifestDisplay).render();
@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(charts);
 
     chartDisplayButton.addEventListener('click', (e) => {
+        e.preventDefault();
         let scroll = setInterval(() => window.scrollBy(0, 10), 20);
         chartDisplayButton.style.display = 'none';
         closeCharts.style.display = 'flex';
@@ -86,12 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     closeCharts.addEventListener('click', (e) => {
+        e.preventDefault();
         let scroll = setInterval(() => window.scrollBy(0, -10), 20);
-        // let style = () => charts.forEach(chart => {chart[0].style.display = 'none'});
+        let style = () => charts.forEach(chart => {chart.style.display = 'none'});
         chartDisplayButton.style.display = 'inline';
         closeCharts.style.display = 'none';
+        
         setTimeout(
-            style,
+            style(),
             250
         );
         const stopScroll = () => {
