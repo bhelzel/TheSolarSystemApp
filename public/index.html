@@ -8,11 +8,13 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="/stylesheets/high_chart_theme.js"></script>
+    <script src="javascripts/earth/earthdata.js"></script>
     <link rel="stylesheet" href="./stylesheets/mars_photos.css">
     <link rel="stylesheet" href="./stylesheets//buttons.css">
     <link rel="stylesheet" href="./stylesheets/main.css">
     <link rel="stylesheet" href="./stylesheets/mission_manifest.css">
     <link rel="stylesheet" href="./stylesheets/apod.css">
+    <link rel="stylesheet" href="./stylesheets/earth.css">
   </head>
   <body class="body">
     <nav>
@@ -30,14 +32,22 @@
     <main id='main'>
       <div class="wrapper">
         <div id="welcome">
-          <div>
+          <div class="welcome-text">
             <p>Welcome to the Solar System App. Check out the Astronomy picture of the day then click a planet to learn more about!</p>
           </div>
           <div id="apod-container" class="planet"></div>
         </div>
         <div id="mercury" class="planet"></div>
         <div id="venus" class="planet"></div>
-        <div id="earth" class="planet"></div>
+        <div id="earth" class="planet">
+          <div class="earth-info">
+
+          </div>
+          <div class="earth-img">
+            <img src="./stylesheets/images/earth.jpg" />
+          </div>
+          <div id="earth-data"></div>
+        </div>
         <div id="mars" class="planet">
           <div id="mars-display"></div>
           <div id="manifest-display">

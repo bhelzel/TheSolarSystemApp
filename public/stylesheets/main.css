@@ -1,12 +1,15 @@
 .body {
-   display: flex; 
+   display: grid;
+   grid-template-areas: "nav mn";
 }
+
 main {
     background-color: black;
 }
 html {
     background-color: black;
 }
+
 nav {
     position: fixed;
     height: 100vh;
@@ -19,6 +22,7 @@ nav {
     text-align: center;
     background-color: black;
     border-right: 1px solid white;
+    grid-area: nav
 }
 .wrapper {
     height: 100%;
@@ -28,6 +32,8 @@ nav {
     flex-direction: column;
     margin-left: 100px;
     flex-wrap: wrap;
+    grid-area: mn;
+    overflow: hidden;
 }
 
 .title {
