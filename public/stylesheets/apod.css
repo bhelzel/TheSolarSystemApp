@@ -16,6 +16,8 @@
     align-items: center;
     color: white;
     font-size: 28px;
+    padding: 10px;
+    text-align: center;
 }
 
 #apod-container {
