@@ -27,6 +27,7 @@ nav {
     border-right: 1px solid white;
     grid-area: nav
 }
+
 .wrapper {
     height: 100%;
     width: (100% - 100px);
@@ -47,4 +48,87 @@ nav {
 .planet {
     height: 100vh;
     width: 90%;
+}
+
+.stock-intro {
+    grid-area: int;
+}
+
+.stock-info {
+    grid-area: inf;
+}
+
+.stock-img {
+    object-fit: scale-down;
+    grid-area: img;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mercury {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "int int"
+        "img inf";
+}
+
+#venus {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "int int"
+        "inf img";
+}
+
+#saturn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "int int"
+        "img inf";
+}
+
+#jupiter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "int int"
+        "inf img";
+}
+
+#uranus {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "int int"
+        "img inf";
+}
+
+#neptune {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "int int"
+        "inf img";
+}
+
+#pluto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "int int"
+        "img inf";
+}
+img {
+    height: 75%;
+    width: 75%;
 }
