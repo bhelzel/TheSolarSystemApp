@@ -24,6 +24,21 @@ app.get('/apod', (request, response) => {
     });
 });
 
+app.get('/earthevents', (request, response) => {
+  const url = "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events?limit=10&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs";
+
+  fetch(url)
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      response.send(data.events);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
+
 app.get('/photos', (req, response) => {
   
   const url = "https://images-api.nasa.gov/search?q=Earth";
@@ -45,7 +60,6 @@ app.get('/roverphotos/:rover/:sol', (request, response) => {
   const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${request.params.rover}/photos?sol=${request.params.sol}&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs`;
   fetch(url)
     .then(res => {
-      console.log(res);
       return res.json();
     })
     .then(data => {
@@ -86,19 +100,6 @@ app.get('/martianweather', (request, response) => {
     });
 });
 
-
-
-// create a search route
-// app.get('/search', (request, response) => {
-//   fetch(`http://openlibrary.org/search.json?q=${request.query.string}`)
-//   .then((response) => {
-//       return response.text();
-//   }).then((body) => {
-//       let results = JSON.parse(body)
-//       console.log(results)
-//       response.send(results)
-//     });
-// });
 
 app.listen(PORT, () => {
   console.log(__dirname);

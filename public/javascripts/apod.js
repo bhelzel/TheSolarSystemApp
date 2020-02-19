@@ -9,11 +9,9 @@ export default class Apod {
     render() {
         axios.get('/apod')
             .then(res => {
-                console.log(res);
-                let contents = `<div class="apod-img">`;
-                contents = contents.concat(`<img src="${res.data.url}"/></div>`);
-                contents = contents.concat(`<div class="apod-explanation">`);
-                contents = contents.concat(`<p class="apod-text">${res.data.explanation}</p></div>`);
+                let contents = '';
+                contents = contents.concat(`<div class="apod-explanation"><p class="apod-text">${res.data.explanation}</p></div>`);
+                contents = contents.concat(`<div class="apod-photo"><img src="${res.data.url}" /></div>`);
                 this.container.innerHTML = contents;  
             })
             .catch (function (error) {
@@ -22,3 +20,4 @@ export default class Apod {
         
     }
 }
+

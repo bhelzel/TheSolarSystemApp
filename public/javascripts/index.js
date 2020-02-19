@@ -1,8 +1,9 @@
-import MissionManifest from './mission_manifest';
-import MarsImageSlidebar from './mars_image_slidebar';
-import MartianWeather from './martian_weather';
-import MartianWindspeed from './martian_windspeed';
-import MartianPressure from './martian_air_pressure';
+import MissionManifest from './mars/mission_manifest';
+import MarsImageSlidebar from './mars/mars_image_slidebar';
+import MartianWeather from './mars/martian_weather';
+import MartianWindspeed from './mars/martian_windspeed';
+import MartianPressure from './mars/martian_air_pressure';
+import EarthData from './earth/earthdata';
 import Apod from './apod';
 
 
@@ -10,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const apodContainer = document.getElementById('apod-container');
     new Apod(apodContainer).render();
+
+    const earthContainer = document.getElementById('earth-data');
+    new EarthData(earthContainer).render();
 
     const manifestDisplay = document.getElementById('manifest-display');
     new MissionManifest(manifestDisplay).render();

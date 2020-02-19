@@ -8,11 +8,13 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="/stylesheets/high_chart_theme.js"></script>
+    <script src="javascripts/earth/earthdata.js"></script>
     <link rel="stylesheet" href="./stylesheets/mars_photos.css">
     <link rel="stylesheet" href="./stylesheets//buttons.css">
     <link rel="stylesheet" href="./stylesheets/main.css">
     <link rel="stylesheet" href="./stylesheets/mission_manifest.css">
     <link rel="stylesheet" href="./stylesheets/apod.css">
+    <link rel="stylesheet" href="./stylesheets/earth.css">
   </head>
   <body class="body">
     <nav>
@@ -30,14 +32,32 @@
     <main id='main'>
       <div class="wrapper">
         <div id="welcome">
-          <div>
-            <p>Welcome to the Solar System App. Check out the Astronomy picture of the day then click a planet to learn more about!</p>
+          <div class="welcome-text">
+            <p>Welcome to the Solar System App. Check out the Astronomy picture of the day, then click on a planet to learn more about it!</p>
           </div>
           <div id="apod-container" class="planet"></div>
         </div>
-        <div id="mercury" class="planet"></div>
-        <div id="venus" class="planet"></div>
-        <div id="earth" class="planet"></div>
+        <div id="mercury" class="planet">
+          <div class="mercury-info"></div>
+          <div class="mercury-img">
+
+          </div>
+        </div>
+        <div id="venus" class="planet">
+          <div class="venus-info"></div>
+          <div class="venus-img">
+          
+          </div>
+        </div>
+        <div id="earth" class="planet">
+          <div class="earth-info">
+
+          </div>
+          <div class="earth-img">
+            <img src="./stylesheets/images/earth.jpg" />
+          </div>
+          <div id="earth-data"></div>
+        </div>
         <div id="mars" class="planet">
           <div id="mars-display"></div>
           <div id="manifest-display">
@@ -88,11 +108,36 @@
             <button id="close-charts">Close Charts</button>
           </div>
         </div>
-        <div id="saturn" class="planet"></div>
-        <div id="jupiter" class="planet"></div>
-        <div id="uranus" class="planet"></div>
-        <div id="neptune" class="planet"></div>
-        <div id="pluto" class="planet"></div>
+        <div id="saturn" class="planet">
+          <div class="saturn-info"></div>
+          <div class="saturn-img">
+          
+          </div>
+        </div>
+        <div id="jupiter" class="planet">
+          <div class="jupiter-info"></div>
+          <div class="jupiter-img">
+          
+          </div>
+        </div>
+        <div id="uranus" class="planet">
+          <div class="uranus-info"></div>
+          <div class="uranus-img">
+          
+          </div>
+        </div>
+        <div id="neptune" class="planet">
+          <div class="neptune-info"></div>
+          <div class="neptune-img">
+          
+          </div>
+        </div>
+        <div id="pluto" class="planet">
+          <div class="pluto-info"></div>
+          <div class="pluto-img">
+          
+          </div>
+        </div>
       </div>  
     </main>
   </body>

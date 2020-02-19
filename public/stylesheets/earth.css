@@ -1,0 +1,36 @@
+#earth {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "ein ein"
+        "eim ed";
+}
+
+.earth-info {
+    grid-area: ein;
+}
+
+.earth-img {
+    grid-area: eim;
+    object-fit: scale-down;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#earth-data {
+    grid-area: ed;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-list {
+    height: 100%;
+}
+.event-item {
+    list-style: none;
+    height: 9%;
+}
