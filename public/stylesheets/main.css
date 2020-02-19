@@ -2,6 +2,7 @@
    display: grid;
    grid-template-areas: "nav mn";
    margin: 0px;
+   overflow: hidden;
 }
 
 main {
@@ -131,4 +132,52 @@ nav {
 img {
     height: 75%;
     width: 75%;
+}
+
+.nav-anchor {
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    display: flex;
+    background-position: center;
+}
+
+#wlcm {
+    background-image: url('./images/milky-way-icon.jpg');
+}
+
+#merc {
+    background-image: url('./images/mercury-icon.png');
+}
+
+#ven {
+    background-image: url('./images/venus-icon.png');
+}
+
+#eart {
+    background-image: url('./images/earth-icon.png');
+}
+
+#mar {
+    background-image: url('./images/mars-icon.png');
+}
+
+#sat {
+    background-image: url('./images/saturn-icon.png');
+}
+
+#jup {
+    background-image: url('./images/jupiter-icon.jpg');
+}
+
+#ura {
+    background-image: url('./images/uranus-icon.png');
+}
+
+#nep {
+    background-image: url('./images/neptune-icon.png');
+}
+
+#plu {
+    background-image: url('./images/pluto-icon.png');
 }
