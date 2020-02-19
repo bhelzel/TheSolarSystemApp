@@ -9,6 +9,11 @@
 
 .earth-info {
     grid-area: ein;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    margin: 5%;
+    line-height: 1.5;
 }
 
 .earth-img {
