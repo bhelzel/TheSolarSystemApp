@@ -57,6 +57,10 @@ nav {
 
 .stock-info {
     grid-area: inf;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .stock-img {
@@ -180,4 +184,30 @@ img {
 
 #plu {
     background-image: url('./images/pluto-icon.png');
+}
+
+.title {
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    margin: 5%;
+    line-height: 1.5;
+}
+.info-table {
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    margin: 5%;
+    line-height: 1.5;
+}
+
+.stock-intro {
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    margin: 5%;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
