@@ -44,6 +44,33 @@
 }
 
 .event-item {
+    display: flex;
     list-style: none;
-    height: 50px;
+    height: 40px;
+    background-color: rgb(0, 0, 44);
+    width: 400px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    color: white;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+
+a {
+    text-decoration: none !important;
+    color: white;
+}
+
+.event-item:hover {
+    cursor: pointer;
+    background-color: rgb(0, 0, 151);
+    outline: none
+}
+
+.event-title {
+    font-size: 18px;
 }

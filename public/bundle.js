@@ -2241,7 +2241,7 @@ class EarthData {
     }
     
     render() {
-        let contents = '<div class="event-container><p class="event-title">Major geological and weather events currently taking place on Earth:<p><ul class="event-list>';
+        let contents = '<div class="event-container"><p class="event-title">Major geological and weather events currently taking place on Earth:</p><ul class="event-list">';
 
         axios.get('/earthevents')
             .then(res => {
