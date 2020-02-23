@@ -11,7 +11,7 @@ export default class EarthData {
         axios.get('/earthevents')
             .then(res => {
                 res.data.forEach(event => {
-                    contents = contents.concat(`<li class="event-item">${event.title}</li>`);
+                    contents = contents.concat(`<li class="event-item"><a href="https://duckduckgo.com/?q=${event.title}&t=ffab&ia=news&iar=news" target="_blank">${event.title}</a></li>`);
                 });
                 contents.concat('</ul></div>');
                 this.container.innerHTML = contents;
