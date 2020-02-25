@@ -15,7 +15,8 @@
   "scripts": {
     "build": "webpack --watch",
     "start": "node app.js",
-    "start:debug": "DEBUG=* node app.js"
+    "start:debug": "DEBUG=* node app.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build"
   },
   "dependencies": {
     "axios": "^0.18.0",
