@@ -56,9 +56,11 @@ nav {
 
 .stock-intro {
     grid-area: int;
-    width: 700px;
 }
 
+.stock-intro > p {
+    width: 85%;
+}
 .stock-info {
     grid-area: inf;
     display: flex;
@@ -93,6 +95,10 @@ nav {
         "inf img";
 }
 
+#venus > .stock-info > table {
+    margin-left: 120px;
+}
+
 #saturn {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -111,6 +117,10 @@ nav {
         "inf img";
 }
 
+#jupiter > .stock-info > table {
+    margin-left: 120px;
+}
+
 #uranus {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -127,6 +137,10 @@ nav {
     grid-template-areas: 
         "int int"
         "inf img";
+}
+
+#neptune > .stock-info > table {
+    margin-left: 120px;
 }
 
 #pluto {

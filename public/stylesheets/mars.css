@@ -19,6 +19,7 @@
     height: 100vh;
     width: 35%;
     background-color: black;
+    justify-content: center;
 }
 
 #mars-display > img {
@@ -32,8 +33,10 @@
 
 #manifest-display {
     height: 100vh;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    justify-content: center;
 }
 
 #chart-display {
@@ -43,7 +46,6 @@
     justify-content: center;
     flex-direction: column;
     margin-left: 15%;
-    margin-top: 20px;
 }
 
 .manifest {
