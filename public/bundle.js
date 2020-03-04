@@ -992,34 +992,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const curiosityForm = document.getElementById('curiosity-form');
     curiosityForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const form = new FormData(curiosityForm); 
-        let sol = form.get('curiosity-range');
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const curiosity = "curiosity";
-        new __WEBPACK_IMPORTED_MODULE_1__mars_mars_image_slidebar__["a" /* default */](marsDisplay, curiosity, sol).render();
+        new __WEBPACK_IMPORTED_MODULE_1__mars_mars_image_slidebar__["a" /* default */](marsDisplay, curiosity).render();
     });
 
     const opportunityForm = document.getElementById('opportunity-form');
     opportunityForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const form = new FormData(opportunityForm);
-        let sol = form.get('opportunity-range');
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const opportunity = "opportunity";
-        new __WEBPACK_IMPORTED_MODULE_1__mars_mars_image_slidebar__["a" /* default */](marsDisplay, opportunity, sol).render();
+        new __WEBPACK_IMPORTED_MODULE_1__mars_mars_image_slidebar__["a" /* default */](marsDisplay, opportunity).render();
     });
 
     const spiritForm = document.getElementById('spirit-form');
     spiritForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const form = new FormData(spiritForm);
-        let sol = form.get('spirit-range');
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const spirit = "spirit";
-        new __WEBPACK_IMPORTED_MODULE_1__mars_mars_image_slidebar__["a" /* default */](marsDisplay, spirit, sol).render();
+        new __WEBPACK_IMPORTED_MODULE_1__mars_mars_image_slidebar__["a" /* default */](marsDisplay, spirit).render();
     });
 
     const chartDisplayButton = document.getElementById('chart-display-button');
@@ -1959,23 +1953,17 @@ class MarsImageSlidebar {
         this.container = container;
         this.container.innerHTML = '';
         this.rover = rover;
-        this.sol = sol;
     }
 
     render() {
         let links = '';
-        axios.get(`/roverphotos/${this.rover}/${this.sol}`)
+        axios.get(`/roverphotos/${this.rover}`)
             .then(res => {
-                (res.data.photos.length < 1 ?
-                (this.rover === 'opportunity' ?
-                new MarsImageSlidebar(this.container, this.rover, 2) :
-                new MarsImageSlidebar(this.container, this.rover, 300)) :
+                new MarsImageSlidebar(this.container, this.rover);
                 res.data.photos.forEach(photo => {
-                  photo.img_src === underfined ?
-                  links = links :
                   links = links.concat(`<div><img class="rover-image" src=${photo.img_src} />
                   <p>${photo.cam}</p>`);
-                }));
+                });
                 this.container.innerHTML = links;
             })
             .catch(function (error) {

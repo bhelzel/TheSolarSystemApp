@@ -35,34 +35,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const curiosityForm = document.getElementById('curiosity-form');
     curiosityForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const form = new FormData(curiosityForm); 
-        let sol = form.get('curiosity-range');
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const curiosity = "curiosity";
-        new MarsImageSlidebar(marsDisplay, curiosity, sol).render();
+        new MarsImageSlidebar(marsDisplay, curiosity).render();
     });
 
     const opportunityForm = document.getElementById('opportunity-form');
     opportunityForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const form = new FormData(opportunityForm);
-        let sol = form.get('opportunity-range');
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const opportunity = "opportunity";
-        new MarsImageSlidebar(marsDisplay, opportunity, sol).render();
+        new MarsImageSlidebar(marsDisplay, opportunity).render();
     });
 
     const spiritForm = document.getElementById('spirit-form');
     spiritForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const form = new FormData(spiritForm);
-        let sol = form.get('spirit-range');
         manifestDisplay.style.display = 'none';
         marsDisplay.style.display = 'flex';
         const spirit = "spirit";
-        new MarsImageSlidebar(marsDisplay, spirit, sol).render();
+        new MarsImageSlidebar(marsDisplay, spirit).render();
     });
 
     const chartDisplayButton = document.getElementById('chart-display-button');
