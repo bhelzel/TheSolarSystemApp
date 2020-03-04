@@ -39,7 +39,7 @@ app.get('/earthevents', (request, response) => {
     });
 });
 
-app.get('/photos', (req, response) => {
+app.get('/photos', (request, response) => {
   
   const url = "https://images-api.nasa.gov/search?q=Earth";
 

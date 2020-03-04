@@ -1023,12 +1023,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const chartDisplayButton = document.getElementById('chart-display-button');
-    const closeCharts = document.getElementById('close-charts');
-
     chartDisplayButton.addEventListener('click', (e) => {
         e.preventDefault();
         chartDisplayButton.style.display = 'none';
-        closeCharts.style.display = 'flex';
         new __WEBPACK_IMPORTED_MODULE_2__mars_martian_weather__["a" /* default */]().render();
         new __WEBPACK_IMPORTED_MODULE_3__mars_martian_windspeed__["a" /* default */]().render();
         new __WEBPACK_IMPORTED_MODULE_4__mars_martian_air_pressure__["a" /* default */]().render();

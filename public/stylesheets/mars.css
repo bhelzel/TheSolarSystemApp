@@ -10,6 +10,7 @@
     height: 100vh;
     width: (100vw - 100px);
 }
+
 #mars-display {
     display: none;
     flex-direction: column;
@@ -33,13 +34,18 @@
     height: 100vh;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    height: 30%;
 }
 
 #chart-display {
     width: 65%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-top: 20px;
 }
+
 .manifest {
     display: flex;
     flex-direction: column;
