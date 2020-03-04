@@ -30,11 +30,11 @@
     </nav>
     <main id='main'>
       <div class="wrapper">
-        <div id="welcome">
+        <div id="welcome" class="planet">
           <div class="welcome-text">
             <p>Welcome to the Solar System App. Check out the Astronomy picture of the day, then click on a planet to learn more about it!</p>
           </div>
-          <div id="apod-container" class="planet"></div>
+          <div id="apod-container"></div>
         </div>
         <div id="mercury" class="planet" >
           <div class="stock-intro">
@@ -97,7 +97,9 @@
           </div>
         </div>
         <div id="venus" class="planet" >
-          <div class="stock-intro"></div>
+          <div class="stock-intro">The closer of our two neighboring planets, 
+            Venus is quite different from the rock between itself and the sun. 
+          </div>
           <div class="stock-info">
             <h2 class="title">Venus Data Sheet</h2>
             <table class="info-table">
@@ -172,30 +174,18 @@
             <div class="manifest-container">
               <div class="manifest" id="curiosity-manifest"></div>
               <form id="curiosity-form" class="photo-form">
-                <label class="input-label">Select a day:
-                  <br>
-                  <input type="range" class="sol-input" id="curiosity-sols" name="curiosity-range" min="0" max="2540">
-                </label>
                 <button class="rover-button" id="curiosity-button" type="submit">Curiosity</button>
               </form>
             </div>
             <div class="manifest-container">
               <div class="manifest" id="opportunity-manifest"></div>
               <form id="opportunity-form" class="photo-form">
-                <label class="input-label">Select a day:
-                  <br>
-                  <input type="range" class="sol-input" name="range" min="0" max="5111">
-                </label>
                 <button type="submit" class="rover-button" id="opportunity-button" type="submit">Opportunity</button>
               </form>
             </div>
             <div class="manifest-container">
               <div class="manifest" id="spirit-manifest"></div>
               <form id="spirit-form" class="photo-form">
-                <label class="input-label">Select a day:
-                  <br>
-                  <input type="range" class="sol-input" name="range" min="0" max="2208">
-                </label>
                 <button class="rover-button" id="spirit-button" type="submit">Spirit</button>
               </form>
             </div>
@@ -213,7 +203,7 @@
             <div class="chart-container">
               <div id="pressure-chart" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
             </div>
-            <button id="close-charts">Close Charts</button>
+            <!-- <button id="close-charts">Close Charts</button> -->
           </div>
         </div>
         <div id="saturn" class="planet" >

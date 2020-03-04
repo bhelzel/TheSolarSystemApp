@@ -1024,47 +1024,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const chartDisplayButton = document.getElementById('chart-display-button');
     const closeCharts = document.getElementById('close-charts');
-    const charts = document.getElementsByClassName('chart-container');
-    console.log(charts);
 
     chartDisplayButton.addEventListener('click', (e) => {
         e.preventDefault();
-        let scroll = setInterval(() => window.scrollBy(0, 10), 20);
         chartDisplayButton.style.display = 'none';
         closeCharts.style.display = 'flex';
-        setTimeout(
-            new __WEBPACK_IMPORTED_MODULE_2__mars_martian_weather__["a" /* default */]().render(),
-            new __WEBPACK_IMPORTED_MODULE_3__mars_martian_windspeed__["a" /* default */]().render(),
-            new __WEBPACK_IMPORTED_MODULE_4__mars_martian_air_pressure__["a" /* default */]().render(),
-            250
-        );
-        const stopScroll = () => {
-            clearInterval(scroll);
-        };
-        setTimeout(
-            stopScroll,
-            1500
-        );
-    });
-
-    closeCharts.addEventListener('click', (e) => {
-        e.preventDefault();
-        let scroll = setInterval(() => window.scrollBy(0, -10), 20);
-        let style = () => charts.forEach(chart => {chart.style.display = 'none'});
-        chartDisplayButton.style.display = 'inline';
-        closeCharts.style.display = 'none';
-        
-        setTimeout(
-            style(),
-            250
-        );
-        const stopScroll = () => {
-            clearInterval(scroll);
-        };
-        setTimeout(
-            stopScroll,
-            1500
-        );
+        new __WEBPACK_IMPORTED_MODULE_2__mars_martian_weather__["a" /* default */]().render();
+        new __WEBPACK_IMPORTED_MODULE_3__mars_martian_windspeed__["a" /* default */]().render();
+        new __WEBPACK_IMPORTED_MODULE_4__mars_martian_air_pressure__["a" /* default */]().render();
     });
     
 });

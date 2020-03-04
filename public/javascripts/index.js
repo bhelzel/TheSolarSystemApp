@@ -67,47 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const chartDisplayButton = document.getElementById('chart-display-button');
     const closeCharts = document.getElementById('close-charts');
-    const charts = document.getElementsByClassName('chart-container');
-    console.log(charts);
 
     chartDisplayButton.addEventListener('click', (e) => {
         e.preventDefault();
-        let scroll = setInterval(() => window.scrollBy(0, 10), 20);
         chartDisplayButton.style.display = 'none';
         closeCharts.style.display = 'flex';
-        setTimeout(
-            new MartianWeather().render(),
-            new MartianWindspeed().render(),
-            new MartianPressure().render(),
-            250
-        );
-        const stopScroll = () => {
-            clearInterval(scroll);
-        };
-        setTimeout(
-            stopScroll,
-            1500
-        );
-    });
-
-    closeCharts.addEventListener('click', (e) => {
-        e.preventDefault();
-        let scroll = setInterval(() => window.scrollBy(0, -10), 20);
-        let style = () => charts.forEach(chart => {chart.style.display = 'none'});
-        chartDisplayButton.style.display = 'inline';
-        closeCharts.style.display = 'none';
-        
-        setTimeout(
-            style(),
-            250
-        );
-        const stopScroll = () => {
-            clearInterval(scroll);
-        };
-        setTimeout(
-            stopScroll,
-            1500
-        );
+        new MartianWeather().render();
+        new MartianWindspeed().render();
+        new MartianPressure().render();
     });
     
 });
