@@ -56,8 +56,8 @@ app.get('/photos', (req, response) => {
     });
 });
 
-app.get('/roverphotos/:rover/:sol', (request, response) => {
-  const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${request.params.rover}/photos?sol=${request.params.sol}&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs`;
+app.get('/roverphotos/:rover', (request, response) => {
+  const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${request.params.rover}/photos?sol=1000&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs`;
   fetch(url)
     .then(res => {
       return res.json();

@@ -66,12 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const chartDisplayButton = document.getElementById('chart-display-button');
-    const closeCharts = document.getElementById('close-charts');
-
     chartDisplayButton.addEventListener('click', (e) => {
         e.preventDefault();
         chartDisplayButton.style.display = 'none';
-        closeCharts.style.display = 'flex';
         new MartianWeather().render();
         new MartianWindspeed().render();
         new MartianPressure().render();
