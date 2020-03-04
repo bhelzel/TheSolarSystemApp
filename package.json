@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "cors test",
   "main": "app.js",
-  "repository": "https://github.com/bhelzel/OurCelestialNeighborhood",
+  "repository": "https://github.com/bhelzel/TheSolarSystemApp",
   "license": "MIT",
   "directories": {
     "lib": "lib"
