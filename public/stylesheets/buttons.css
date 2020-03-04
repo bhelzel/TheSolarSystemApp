@@ -46,10 +46,13 @@
 }
 
 .button-div {
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    vertical-align: center;
 }
+
 #chart-display-button {
     color: white;
     background-color: rgb(0, 0, 44);
@@ -61,9 +64,13 @@
     border-bottom-left-radius: 8px;
     font-size: 16px;
     outline: none;
-    margin-top: 15px;
+    margin-top: 25%;
     margin-bottom: 15px;
-    display: inline;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+
 }
 
 #chart-display-button:hover {

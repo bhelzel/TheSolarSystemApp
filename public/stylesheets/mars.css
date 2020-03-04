@@ -46,6 +46,7 @@
     justify-content: center;
     flex-direction: column;
     margin-left: 15%;
+    margin-top: 0px;
 }
 
 .manifest {
