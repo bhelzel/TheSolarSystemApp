@@ -1,21 +1,3 @@
-# Simple Node API Backend
+# Solar System App
 
-Simple Node Backend for avoiding CORS issues in development
-- npm install
-- npm run build
-- npm start
-
-Technologies
-- express
-- axios
-- webpack
-
-Implementation
-
-This project allows you to serve your HTML and JS from a custom backend that performs API requests to an external API.
-
-app.js contains the routes that you need to get your data. Customize them according to the paths you wish to use in your code, and the API you wish to access
-
-Write your JS in the javascripts folder; your entry file is index.js.
-
-In the entry file 
+Just a fun Solar System info app to get some practice using NASA's open APIs. The Earth page uses the EONET API to track major geological and meteorlogical events taking place on the Planet. The Mars page using the Mars Rover Photo API as well as the Martain Weather API. The splash page uses the Astronomy Picture of the Day API. The other planet pages are filled with some basic data and brief blurb, though someday, hopefully, there will be new APIs to make each page more interesting!
