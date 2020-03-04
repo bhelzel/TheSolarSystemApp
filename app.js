@@ -83,7 +83,7 @@ app.get('/roverphotos/:rover', (request, response) => {
         console.log(error);
       });
   } else {
-    url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos?sol=2&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs';
+    url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos?sol=460&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs';
     fetch(url)
       .then(res => {
         return res.json();

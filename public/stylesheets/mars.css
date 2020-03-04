@@ -6,6 +6,7 @@
 #mars {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     height: 100vh;
     width: (100vw - 100px);
@@ -14,12 +15,14 @@
 #mars-display {
     display: none;
     flex-direction: column;
+    justify-content: center;
     overflow-y: hidden;
     overflow: scroll;
-    height: 100vh;
-    width: 35%;
+    height: 80vh;
+    width: 40%;
     background-color: black;
     justify-content: center;
+    margin: 20px;
 }
 
 #mars-display > img {
@@ -33,20 +36,21 @@
 
 #manifest-display {
     height: 100vh;
+    width: 40%;
     display: flex;
     flex-direction: column;
-    /* grid-template-rows: 1fr 1fr 1fr; */
     justify-content: center;
 }
 
 #chart-display {
-    width: 65%;
+    width: 60%;
     height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-left: 15%;
     margin-top: 0px;
+    margin-right: 20px;
 }
 
 .manifest {
@@ -77,6 +81,6 @@
     color: white;
 }
 
-.sol-input {
+.rover-cam {
     color: white;
 }

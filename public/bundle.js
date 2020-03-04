@@ -1962,7 +1962,7 @@ class MarsImageSlidebar {
                 new MarsImageSlidebar(this.container, this.rover);
                 res.data.photos.forEach(photo => {
                   links = links.concat(`<div><img class="rover-image" src=${photo.img_src} />
-                  <p>${photo.cam}</p>`);
+                  <p class="rover-cam">Camera: ${photo.camera.full_name}</p>`);
                 });
                 this.container.innerHTML = links;
             })
