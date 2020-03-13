@@ -3,11 +3,13 @@
    grid-template-areas: "nav mn";
    margin: 0px;
    overflow: hidden;
+   width: (100vh - 100px);
 }
 
 main {
     background-color: black;
     margin: 0px;
+    width: (100vh - 100px);
 }
 html {
     background-color: black;
@@ -53,19 +55,40 @@ nav {
     overflow: hidden;
     margin: 25px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 3fr;
     grid-template-rows: 1fr 2fr;
     grid-template-areas: 
-        "int int"
+        "hdr int"
         "img inf";
+}
+
+.planet-name {
+    color: white;
+    font-size: 58px;
+    padding: 45px;
+    border: 1px solid white;
+}
+.header-div {
+    grid-area: hdr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 20px;
+    border: 1px solid white;
 }
 
 .stock-intro {
     grid-area: int;
+    display: flex;
+    justify-content: left;
+    align-items: left;
 }
 
 .stock-intro > p {
-    width: 85%;
+    width: 75%;
+    justify-self: left;
+    align-self: left;
 }
 
 .stock-info {
