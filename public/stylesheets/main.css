@@ -52,6 +52,12 @@ nav {
     margin-left: 100px;
     overflow: hidden;
     margin: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "int int"
+        "img inf";
 }
 
 .stock-intro {
@@ -61,6 +67,7 @@ nav {
 .stock-intro > p {
     width: 85%;
 }
+
 .stock-info {
     grid-area: inf;
     display: flex;
@@ -75,81 +82,6 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#mercury {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
-    grid-template-areas: 
-        "int int"
-        "img inf";
-}
-
-#venus {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
-    grid-template-areas: 
-        "int int"
-        "inf img";
-}
-
-#venus > .stock-info > table {
-    margin-left: 120px;
-}
-
-#saturn {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
-    grid-template-areas: 
-        "int int"
-        "img inf";
-}
-
-#jupiter {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
-    grid-template-areas: 
-        "int int"
-        "inf img";
-}
-
-#jupiter > .stock-info > table {
-    margin-left: 120px;
-}
-
-#uranus {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
-    grid-template-areas: 
-        "int int"
-        "img inf";
-}
-
-#neptune {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
-    grid-template-areas: 
-        "int int"
-        "inf img";
-}
-
-#neptune > .stock-info > table {
-    margin-left: 120px;
-}
-
-#pluto {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
-    grid-template-areas: 
-        "int int"
-        "img inf";
 }
 
 img {
