@@ -75,7 +75,7 @@ nav {
     align-items: center;
     color: white;
     margin: 20px;
-    border: 1px solid white;
+    border: 2px solid white;
 }
 
 .stock-intro {
@@ -185,4 +185,12 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+table {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+td {
+    padding: 0px 25px 0px 25px;
 }
