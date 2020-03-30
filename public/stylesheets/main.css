@@ -56,16 +56,16 @@ nav {
     margin: 25px;
     display: grid;
     grid-template-columns: 2fr 3fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 3fr 2fr;
     grid-template-areas: 
-        "hdr int"
-        "img inf";
+        "hdr hdr"
+        "img inf"
+        "int int";
 }
 
 .planet-name {
     color: white;
-    font-size: 58px;
-    padding: 45px;
+    font-size: 34px;
     border: 1px solid white;
 }
 .header-div {
@@ -74,15 +74,14 @@ nav {
     justify-content: center;
     align-items: center;
     color: white;
-    margin: 20px;
     border: 2px solid white;
 }
 
 .stock-intro {
     grid-area: int;
     display: flex;
-    justify-content: left;
-    align-items: left;
+    justify-content: center;
+    align-items: center;
 }
 
 .stock-intro > p {
