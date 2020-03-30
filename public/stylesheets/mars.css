@@ -21,6 +21,7 @@
     background-color: black;
     justify-content: center;
     margin: 20px;
+    overflow: scroll;
 }
 
 #mars-display > img {

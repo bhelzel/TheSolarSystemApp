@@ -2,11 +2,10 @@
     height: 100vh;
     width: (100vw - 100px);
     margin-left: 100px;
-    overflow: hidden;
-    margin: 25px;
+    overflow-x: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 3fr 2fr;
+    grid-template-rows: 100px 3fr 2fr;
     grid-template-areas: 
         "hdr hdr"
         "eim ed"
@@ -34,8 +33,9 @@
     grid-area: ed;
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
+    margin-top: 80px;
 }
 
 .event-container {
