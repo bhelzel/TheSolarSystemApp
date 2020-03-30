@@ -25,7 +25,7 @@ app.get('/apod', (request, response) => {
 });
 
 app.get('/earthevents', (request, response) => {
-  const url = "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events?limit=10&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs";
+  const url = "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events?limit=6&api_key=Al5EpS4ebP8ORPxQiHOxikLYeSwEjNpAGk5Nd2bs";
 
   fetch(url)
     .then(res => {
