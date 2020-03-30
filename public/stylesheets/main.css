@@ -83,13 +83,30 @@ nav {
     align-items: left;
     align-self: left;
     justify-items: left;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    margin-left: 12%;
+    line-height: 1.5;
+    font-family: 'Oswald', sans-serif;
 }
+
+/* .stock-intro {
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    margin: 5%;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
 
 .stock-intro > p {
     width: 75%;
     align-self: left;
     justify-self: left;
-    font-family: 'Arapey', serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 24px;
 }
 
@@ -168,6 +185,7 @@ img {
     width: 100%;
     margin: 5%;
     line-height: 1.5;
+    font-family: 'Oswald', sans-serif;
 }
 .info-table {
     color: white;
@@ -175,19 +193,10 @@ img {
     width: 100%;
     margin: 5%;
     line-height: 1.5;
-
+    font-family: 'Oswald', sans-serif;
 }
 
-.stock-intro {
-    color: white;
-    font-size: 20px;
-    width: 100%;
-    margin: 5%;
-    line-height: 1.5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 table {
     display: flex;
     justify-content: center;
