@@ -3,20 +3,31 @@
     height: 100%;
 }
 
+.mars-div {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#mars-header {
+    margin-top: 20px;
+    height: 60px;
+}
 #mars {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: (100vw - 100px);
+    overflow: hidden;
 }
 
 #mars-display {
     display: none;
     flex-direction: column;
     justify-content: center;
-    height: 80vh;
+    height: 100%;
     width: 40%;
     background-color: black;
     justify-content: center;
@@ -34,7 +45,7 @@
 }
 
 #manifest-display {
-    height: 100vh;
+    height: 100%;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -43,7 +54,7 @@
 
 #chart-display {
     width: 60%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;

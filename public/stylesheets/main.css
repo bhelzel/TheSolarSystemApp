@@ -6,11 +6,11 @@
 }
 
 main {
-    background-color: black;
+    background: rgb(0,0,0);
     width: (100vw - 150px);
 }
 html {
-    background-color: black;
+    background: rgb(0,0,0);
 }
 
 nav {
@@ -31,7 +31,8 @@ nav {
 .wrapper {
     height: 100%;
     width: (100% - 100px);
-    background-color: black;
+    background: rgb(0,9,36);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 73%, rgba(47,9,121,1) 98%);
     display: flex;
     flex-direction: column;
     margin-left: 100px;
