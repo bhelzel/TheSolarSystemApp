@@ -3,7 +3,7 @@
     height: 100%;
 }
 
-.mars-div {
+#mars-div {
     display: flex;
     flex-direction: column;
     height: 100vh;
