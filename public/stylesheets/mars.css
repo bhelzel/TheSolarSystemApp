@@ -16,8 +16,6 @@
     display: none;
     flex-direction: column;
     justify-content: center;
-    overflow-y: hidden;
-    overflow: scroll;
     height: 80vh;
     width: 40%;
     background-color: black;

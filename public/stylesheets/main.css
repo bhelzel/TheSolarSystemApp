@@ -2,7 +2,7 @@
    display: grid;
    grid-template-areas: "nav mn";
    margin: 0px;
-   overflow: hidden;
+   overflow-x: hidden;
    width: (100vh - 100px);
 }
 
@@ -28,7 +28,7 @@ nav {
     text-align: center;
     background-color: black;
     border-right: 1px solid white;
-    grid-area: nav
+    grid-area: nav;
 }
 
 .wrapper {
@@ -40,7 +40,7 @@ nav {
     margin-left: 100px;
     flex-wrap: wrap;
     grid-area: mn;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .title {
@@ -49,10 +49,10 @@ nav {
 }
 
 .planet {
-    height: 100vh;
-    width: (100vw - 100px);
+    width: (100% - 100px);
     margin-left: 100px;
-    overflow: hidden;
+    margin-top: 100px;
+    overflow-x: hidden;
     margin: 25px;
     display: grid;
     grid-template-columns: 2fr 3fr;
@@ -65,29 +65,31 @@ nav {
 
 .planet-name {
     color: white;
-    font-size: 34px;
-    border: 1px solid white;
+    font-size: 72px;
+    font-family: 'Arapey', serif;
 }
+
 .header-div {
     grid-area: hdr;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    border: 2px solid white;
 }
 
 .stock-intro {
     grid-area: int;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
 }
 
 .stock-intro > p {
     width: 75%;
     justify-self: left;
     align-self: left;
+    font-family: 'Arapey', serif;
+    font-size: 24px;
 }
 
 .stock-info {
